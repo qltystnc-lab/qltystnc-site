@@ -1,6 +1,3 @@
-
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -40,7 +37,7 @@ Index · HTML
   }
   a{color:inherit;text-decoration:none;}
   img{display:block;max-width:100%;}
- 
+
   /* NAV */
   .nav{
     position:sticky;top:0;z-index:50;
@@ -67,7 +64,7 @@ Index · HTML
     .nav-links{display:flex;}
     .burger{display:none;}
   }
- 
+
   /* HERO */
   .hero{
     position:relative;
@@ -118,7 +115,7 @@ Index · HTML
   .btn-solid{background:var(--signal);border-color:var(--signal);color:#0a0a0a;font-weight:600;}
   .btn-solid:hover{background:#ff7038;}
   .btn-ghost:hover{background:var(--off);color:#0a0a0a;}
- 
+
   /* EXIF / session data strip — signature element */
   .exif-strip{
     display:grid;
@@ -138,7 +135,7 @@ Index · HTML
   @media(min-width:640px){
     .exif-strip{grid-template-columns:repeat(4,1fr);}
   }
- 
+
   /* SECTION SHELL */
   .section{padding:64px 20px;border-bottom:1px solid var(--line);}
   .section-head{
@@ -149,7 +146,7 @@ Index · HTML
   .section-head h2{font-size:clamp(26px,5vw,40px);}
   .see-all{font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;border-bottom:1px solid var(--off);padding-bottom:2px;white-space:nowrap;}
   .see-all:hover{color:var(--signal);border-color:var(--signal);}
- 
+
   /* CARD GRID */
   .grid{display:grid;gap:16px;grid-template-columns:1fr;}
   @media(min-width:760px){.grid{grid-template-columns:2fr 1fr 1fr;}}
@@ -174,7 +171,7 @@ Index · HTML
   .card .tag-sm{font-size:10px;color:var(--signal);margin-bottom:8px;}
   .card h3{font-size:20px;line-height:1.15;margin-bottom:10px;}
   .card .meta{font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;}
- 
+
   /* TRUST STRIP */
   .trust{
     display:grid;grid-template-columns:1fr;gap:32px;
@@ -194,7 +191,7 @@ Index · HTML
   .stat-row{display:flex;gap:36px;margin-top:24px;flex-wrap:wrap;}
   .stat b{font-family:'Oswald',sans-serif;font-size:28px;display:block;color:var(--signal);}
   .stat span{font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;}
- 
+
   /* FOOTER */
   footer{padding:48px 20px 32px;}
   .foot-top{
@@ -211,7 +208,7 @@ Index · HTML
     padding-top:20px;border-top:1px solid var(--line);
     font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;
   }
- 
+
   /* LANG TOGGLE */
   .lang-toggle{
     display:flex;align-items:center;gap:2px;
@@ -229,7 +226,7 @@ Index · HTML
 </style>
 </head>
 <body>
- 
+
 <nav class="nav">
   <div class="logo">QLTY<span>STNC</span></div>
   <div class="nav-links">
@@ -247,7 +244,7 @@ Index · HTML
     <div class="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
- 
+
 <header class="hero">
   <div class="hero-placeholder-note">[ SUBSTITUIR POR FOTO TUA — NCRACING CAR FEST 2026, HORIZONTAL, BAIXO ÂNGULO ]</div>
   <div class="eyebrow mono" data-pt="EST. 2015 · PORTUGAL · WORLDWIDE" data-en="EST. 2015 · PORTUGAL · WORLDWIDE">EST. 2015 · PORTUGAL · WORLDWIDE</div>
@@ -264,7 +261,7 @@ Index · HTML
     <div><span class="k" data-pt="STATUS" data-en="STATUS">STATUS</span><span class="v" style="color:var(--ok)"><span data-pt="● ATIVO" data-en="● ACTIVE">● ATIVO</span></span></div>
   </div>
 </header>
- 
+
 <section class="section" id="projetos">
   <div class="section-head">
     <div>
@@ -273,7 +270,7 @@ Index · HTML
     </div>
     <a href="#" class="see-all" data-pt="VER TODOS →" data-en="VIEW ALL →">VER TODOS →</a>
   </div>
-  <div class="grid">
+  <div class="grid" id="projetos-grid">
     <a href="#" class="card feature">
       <div class="tag-sm mono" data-pt="EVENTO" data-en="EVENT">EVENTO</div>
       <h3>NCRacing Car Fest 2026</h3>
@@ -291,7 +288,7 @@ Index · HTML
     </a>
   </div>
 </section>
- 
+
 <section class="trust" id="sobre">
   <div class="trust-img">[ FOTO — RICARDO/SAUL EM SESSÃO ]</div>
   <div>
@@ -305,7 +302,7 @@ Index · HTML
     </div>
   </div>
 </section>
- 
+
 <section class="section" id="reportagens">
   <div class="section-head">
     <div>
@@ -314,7 +311,7 @@ Index · HTML
     </div>
     <a href="#" class="see-all" data-pt="ARQUIVO COMPLETO →" data-en="FULL ARCHIVE →">ARQUIVO COMPLETO →</a>
   </div>
-  <div class="grid">
+  <div class="grid" id="reportagens-grid">
     <a href="#" class="card feature">
       <div class="tag-sm mono" data-pt="2020 · RECUPERADO" data-en="2020 · RECOVERED">2020 · RECUPERADO</div>
       <h3 data-pt="O Polo Steilheck de Vitor Santos" data-en="Vitor Santos' Polo Steilheck">O Polo Steilheck de Vitor Santos</h3>
@@ -332,7 +329,7 @@ Index · HTML
     </a>
   </div>
 </section>
- 
+
 <section class="section" id="loja">
   <div class="section-head">
     <div>
@@ -365,7 +362,7 @@ Index · HTML
     <span data-pt="NÃO ENCONTRAS O TEU MODELO?" data-en="CAN'T FIND YOUR MODEL?">NÃO ENCONTRAS O TEU MODELO?</span> <a href="#contacto" style="color:var(--signal);border-bottom:1px solid var(--signal);" data-pt="PEDE ORÇAMENTO →" data-en="REQUEST A QUOTE →">PEDE ORÇAMENTO →</a>
   </div>
 </section>
- 
+
 <footer id="contacto">
   <div class="foot-top">
     <div class="foot-logo">QLTY<span>STNC</span></div>
@@ -383,7 +380,7 @@ Index · HTML
     <span data-pt="PORTO · PORTUGAL" data-en="PORTO · PORTUGAL">PORTO · PORTUGAL</span>
   </div>
 </footer>
- 
+
 <!--
   CLOUDFLARE WEB ANALYTICS
   Passo a passo (fazer no computador):
@@ -398,7 +395,7 @@ Index · HTML
   So tu tens acesso, com o teu login.
 -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "COLA_AQUI_O_TEU_TOKEN"}'></script>
- 
+
 <!--
   PAINEL DE ARTIGOS / SESSOES (Decap CMS)
   Passo a passo (fazer no computador, depois do Cloudflare):
@@ -424,7 +421,7 @@ Index · HTML
     });
   }
 </script>
- 
+
 <!-- LANG TOGGLE PT/EN -->
 <script>
   function setLang(lang) {
@@ -451,7 +448,16 @@ Index · HTML
     if (saved === 'en') { setLang('en'); }
   })();
 </script>
- 
+
+<script src="assets/site.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.QLTYSTNC) {
+      window.QLTYSTNC.renderGrid("reportagens-grid", "reportagens", 3);
+      window.QLTYSTNC.renderGrid("projetos-grid", "sessoes", 3);
+    }
+  });
+</script>
+
 </body>
 </html>
- 
