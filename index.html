@@ -299,14 +299,10 @@
 <section class="trust" id="sobre">
   <div class="trust-img">[ FOTO — RICARDO/SAUL EM SESSÃO ]</div>
   <div>
-    <div class="tag mono" style="color:var(--signal);margin-bottom:8px;" data-pt="DESDE 2015" data-en="SINCE 2015">DESDE 2015</div>
-    <h2 data-pt="Não somos agência.<br>Somos da cena." data-en="We're not an agency.<br>We're part of the scene.">Não somos agência.<br>Somos da cena.</h2>
-    <p data-pt="QLTYSTNC nasceu do interesse genuíno em stance e drift, não de um briefing de marketing. Ricardo e Saul disparam nas bancadas, na box e na pista — não atrás de uma barreira de imprensa." data-en="QLTYSTNC was born from genuine interest in stance and drift, not a marketing brief. Ricardo and Saul shoot from the stands, the pits and the track — not from behind a press barrier.">QLTYSTNC nasceu do interesse genuíno em stance e drift, não de um briefing de marketing. Ricardo e Saul disparam nas bancadas, na box e na pista — não atrás de uma barreira de imprensa.</p>
-    <div class="stat-row">
-      <div class="stat"><b>10+</b><span data-pt="ANOS DE ARQUIVO" data-en="YEARS OF ARCHIVE">ANOS DE ARQUIVO</span></div>
-      <div class="stat"><b>2</b><span data-pt="FOTÓGRAFOS" data-en="PHOTOGRAPHERS">FOTÓGRAFOS</span></div>
-      <div class="stat"><b>PT</b><span data-pt="+ INTERNACIONAL" data-en="+ INTERNATIONAL">+ INTERNACIONAL</span></div>
-    </div>
+    <div class="tag mono" style="color:var(--signal);margin-bottom:8px;">SINCE</div>
+    <div class="display" id="days-counter" style="font-size:clamp(56px,11vw,110px);line-height:0.9;color:var(--off);">0</div>
+    <div class="mono" style="color:var(--mute);font-size:12px;margin-top:6px;margin-bottom:20px;" data-pt="DIAS" data-en="DAYS">DIAS</div>
+    <div class="mono" style="color:var(--signal);font-size:13px;">VNGAIA &amp; PORTO, PT</div>
   </div>
 </section>
 
@@ -469,12 +465,23 @@
   })();
 </script>
 
+<!-- DAYS COUNTER (SINCE 2015) -->
+<script>
+  (function () {
+    var start = new Date(2015, 0, 1);
+    var now = new Date();
+    var days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+    var el = document.getElementById("days-counter");
+    if (el) el.textContent = days.toLocaleString("pt-PT");
+  })();
+</script>
+
 <script src="assets/site.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     if (window.QLTYSTNC) {
       window.QLTYSTNC.renderGrid("reportagens-grid", "reportagens", 3);
-      window.QLTYSTNC.renderGrid("projetos-grid", "sessoes", 3);
+      window.QLTYSTNC.renderMixedGrid("projetos-grid", ["sessoes", "reportagens"], 3);
     }
   });
 </script>
