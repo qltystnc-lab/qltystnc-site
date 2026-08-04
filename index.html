@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -37,7 +40,7 @@
   }
   a{color:inherit;text-decoration:none;}
   img{display:block;max-width:100%;}
-
+ 
   /* NAV */
   .nav{
     position:sticky;top:0;z-index:50;
@@ -64,7 +67,7 @@
     .nav-links{display:flex;}
     .burger{display:none;}
   }
-
+ 
   /* HERO */
   .hero{
     position:relative;
@@ -115,7 +118,7 @@
   .btn-solid{background:var(--signal);border-color:var(--signal);color:#0a0a0a;font-weight:600;}
   .btn-solid:hover{background:#ff7038;}
   .btn-ghost:hover{background:var(--off);color:#0a0a0a;}
-
+ 
   /* EXIF / session data strip — signature element */
   .exif-strip{
     display:grid;
@@ -135,7 +138,7 @@
   @media(min-width:640px){
     .exif-strip{grid-template-columns:repeat(4,1fr);}
   }
-
+ 
   /* SECTION SHELL */
   .section{padding:64px 20px;border-bottom:1px solid var(--line);}
   .section-head{
@@ -146,7 +149,7 @@
   .section-head h2{font-size:clamp(26px,5vw,40px);}
   .see-all{font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;border-bottom:1px solid var(--off);padding-bottom:2px;white-space:nowrap;}
   .see-all:hover{color:var(--signal);border-color:var(--signal);}
-
+ 
   /* CARD GRID */
   .grid{display:grid;gap:16px;grid-template-columns:1fr;}
   @media(min-width:760px){.grid{grid-template-columns:2fr 1fr 1fr;}}
@@ -171,7 +174,7 @@
   .card .tag-sm{font-size:10px;color:var(--signal);margin-bottom:8px;}
   .card h3{font-size:20px;line-height:1.15;margin-bottom:10px;}
   .card .meta{font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;}
-
+ 
   /* TRUST STRIP */
   .trust{
     display:grid;grid-template-columns:1fr;gap:32px;
@@ -191,7 +194,7 @@
   .stat-row{display:flex;gap:36px;margin-top:24px;flex-wrap:wrap;}
   .stat b{font-family:'Oswald',sans-serif;font-size:28px;display:block;color:var(--signal);}
   .stat span{font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;}
-
+ 
   /* FOOTER */
   footer{padding:48px 20px 32px;}
   .foot-top{
@@ -208,158 +211,179 @@
     padding-top:20px;border-top:1px solid var(--line);
     font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;
   }
+ 
+  /* LANG TOGGLE */
+  .lang-toggle{
+    display:flex;align-items:center;gap:2px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:0.06em;
+  }
+  .lang-toggle button{
+    background:transparent;border:1px solid var(--line);color:var(--mute);
+    padding:5px 9px;cursor:pointer;font-family:inherit;font-size:inherit;letter-spacing:inherit;
+    transition:all .15s ease;
+  }
+  .lang-toggle button.active{background:var(--signal);border-color:var(--signal);color:#0a0a0a;font-weight:600;}
+  .lang-toggle button:not(.active):hover{color:var(--off);border-color:var(--off);}
+  .nav-right{display:flex;align-items:center;gap:18px;}
 </style>
 </head>
 <body>
-
+ 
 <nav class="nav">
   <div class="logo">QLTY<span>STNC</span></div>
   <div class="nav-links">
-    <a href="#projetos">PROJETOS</a>
-    <a href="#reportagens">REPORTAGENS</a>
-    <a href="#loja">LOJA</a>
-    <a href="#sobre">SOBRE</a>
-    <a href="#contacto">CONTACTO</a>
+    <a href="#projetos" data-pt="PROJETOS" data-en="PROJECTS">PROJETOS</a>
+    <a href="#reportagens" data-pt="REPORTAGENS" data-en="STORIES">REPORTAGENS</a>
+    <a href="#loja" data-pt="LOJA" data-en="SHOP">LOJA</a>
+    <a href="#sobre" data-pt="SOBRE" data-en="ABOUT">SOBRE</a>
+    <a href="#contacto" data-pt="CONTACTO" data-en="CONTACT">CONTACTO</a>
   </div>
-  <div class="burger"><span></span><span></span><span></span></div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button id="btn-pt" class="active">PT</button>
+      <button id="btn-en">EN</button>
+    </div>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
 </nav>
-
+ 
 <header class="hero">
   <div class="hero-placeholder-note">[ SUBSTITUIR POR FOTO TUA — NCRACING CAR FEST 2026, HORIZONTAL, BAIXO ÂNGULO ]</div>
-  <div class="eyebrow mono">EST. 2015 · PORTUGAL · WORLDWIDE</div>
-  <h1>STANCE.<br>DRIFT.<br><span class="accent">NO FILTER.</span></h1>
-  <p class="sub">Fotografia automóvel underground. Sessões, reportagens de evento e cultura JDM/drift documentadas sem plástico corporativo.</p>
+  <div class="eyebrow mono" data-pt="EST. 2015 · PORTUGAL · WORLDWIDE" data-en="EST. 2015 · PORTUGAL · WORLDWIDE">EST. 2015 · PORTUGAL · WORLDWIDE</div>
+  <h1><span data-pt="STANCE." data-en="STANCE.">STANCE.</span><br><span data-pt="DRIFT." data-en="DRIFT.">DRIFT.</span><br><span class="accent" data-pt="NO FILTER." data-en="NO FILTER.">NO FILTER.</span></h1>
+  <p class="sub" data-pt="Fotografia automóvel underground. Sessões, reportagens de evento e cultura JDM/drift documentadas sem plástico corporativo." data-en="Underground automotive photography. Sessions, event coverage and JDM/drift culture, documented without corporate polish.">Fotografia automóvel underground. Sessões, reportagens de evento e cultura JDM/drift documentadas sem plástico corporativo.</p>
   <div class="btn-row">
-    <a href="#projetos" class="btn btn-solid">VER PROJETOS →</a>
-    <a href="#contacto" class="btn btn-ghost">MARCAR SESSÃO</a>
+    <a href="#projetos" class="btn btn-solid" data-pt="VER PROJETOS →" data-en="VIEW PROJECTS →">VER PROJETOS →</a>
+    <a href="#contacto" class="btn btn-ghost" data-pt="MARCAR SESSÃO" data-en="BOOK A SESSION">MARCAR SESSÃO</a>
   </div>
   <div class="exif-strip">
-    <div><span class="k">CÂMARA</span><span class="v">SONY A7III</span></div>
-    <div><span class="k">ÚLTIMO EVENTO</span><span class="v">NCRACING 07.2026</span></div>
-    <div><span class="k">LOCALIZAÇÃO</span><span class="v">VILA NOVA DE GAIA</span></div>
-    <div><span class="k">STATUS</span><span class="v" style="color:var(--ok)">● ATIVO</span></div>
+    <div><span class="k" data-pt="CÂMARA" data-en="CAMERA">CÂMARA</span><span class="v">SONY A7III</span></div>
+    <div><span class="k" data-pt="ÚLTIMO EVENTO" data-en="LATEST EVENT">ÚLTIMO EVENTO</span><span class="v">NCRACING 07.2026</span></div>
+    <div><span class="k" data-pt="LOCALIZAÇÃO" data-en="LOCATION">LOCALIZAÇÃO</span><span class="v">VILA NOVA DE GAIA</span></div>
+    <div><span class="k" data-pt="STATUS" data-en="STATUS">STATUS</span><span class="v" style="color:var(--ok)"><span data-pt="● ATIVO" data-en="● ACTIVE">● ATIVO</span></span></div>
   </div>
 </header>
-
+ 
 <section class="section" id="projetos">
   <div class="section-head">
     <div>
-      <div class="tag mono">GALERIAS</div>
-      <h2>Últimos Projetos</h2>
+      <div class="tag mono" data-pt="GALERIAS" data-en="GALLERIES">GALERIAS</div>
+      <h2 data-pt="Últimos Projetos" data-en="Latest Projects">Últimos Projetos</h2>
     </div>
-    <a href="#" class="see-all">VER TODOS →</a>
+    <a href="#" class="see-all" data-pt="VER TODOS →" data-en="VIEW ALL →">VER TODOS →</a>
   </div>
   <div class="grid">
     <a href="#" class="card feature">
-      <div class="tag-sm mono">EVENTO</div>
+      <div class="tag-sm mono" data-pt="EVENTO" data-en="EVENT">EVENTO</div>
       <h3>NCRacing Car Fest 2026</h3>
-      <div class="meta">18–19 JUL · ESTÁDIO JORGE SAMPAIO, PEDROSO</div>
+      <div class="meta" data-pt="18–19 JUL · ESTÁDIO JORGE SAMPAIO, PEDROSO" data-en="JUL 18–19 · ESTÁDIO JORGE SAMPAIO, PEDROSO">18–19 JUL · ESTÁDIO JORGE SAMPAIO, PEDROSO</div>
     </a>
     <a href="#" class="card">
-      <div class="tag-sm mono">SESSÃO</div>
+      <div class="tag-sm mono" data-pt="SESSÃO" data-en="SESSION">SESSÃO</div>
       <h3>VW Polo Steilheck 86C</h3>
       <div class="meta">VITOR SANTOS</div>
     </a>
     <a href="#" class="card">
       <div class="tag-sm mono">DRIFT</div>
-      <h3>Tandem — Ivo & Hélder</h3>
-      <div class="meta">NCRACING · PISTA</div>
+      <h3 data-pt="Tandem — Ivo &amp; Hélder" data-en="Tandem — Ivo &amp; Hélder">Tandem — Ivo &amp; Hélder</h3>
+      <div class="meta" data-pt="NCRACING · PISTA" data-en="NCRACING · TRACK">NCRACING · PISTA</div>
     </a>
   </div>
 </section>
-
+ 
 <section class="trust" id="sobre">
   <div class="trust-img">[ FOTO — RICARDO/SAUL EM SESSÃO ]</div>
   <div>
-    <div class="tag mono" style="color:var(--signal);margin-bottom:8px;">DESDE 2015</div>
-    <h2>Não somos agência.<br>Somos da cena.</h2>
-    <p>QLTYSTNC nasceu do interesse genuíno em stance e drift, não de um briefing de marketing. Ricardo e Saul disparam nas bancadas, na box e na pista — não atrás de uma barreira de imprensa.</p>
+    <div class="tag mono" style="color:var(--signal);margin-bottom:8px;" data-pt="DESDE 2015" data-en="SINCE 2015">DESDE 2015</div>
+    <h2 data-pt="Não somos agência.<br>Somos da cena." data-en="We're not an agency.<br>We're part of the scene.">Não somos agência.<br>Somos da cena.</h2>
+    <p data-pt="QLTYSTNC nasceu do interesse genuíno em stance e drift, não de um briefing de marketing. Ricardo e Saul disparam nas bancadas, na box e na pista — não atrás de uma barreira de imprensa." data-en="QLTYSTNC was born from genuine interest in stance and drift, not a marketing brief. Ricardo and Saul shoot from the stands, the pits and the track — not from behind a press barrier.">QLTYSTNC nasceu do interesse genuíno em stance e drift, não de um briefing de marketing. Ricardo e Saul disparam nas bancadas, na box e na pista — não atrás de uma barreira de imprensa.</p>
     <div class="stat-row">
-      <div class="stat"><b>10+</b><span>ANOS DE ARQUIVO</span></div>
-      <div class="stat"><b>2</b><span>FOTÓGRAFOS</span></div>
-      <div class="stat"><b>PT</b><span>+ INTERNACIONAL</span></div>
+      <div class="stat"><b>10+</b><span data-pt="ANOS DE ARQUIVO" data-en="YEARS OF ARCHIVE">ANOS DE ARQUIVO</span></div>
+      <div class="stat"><b>2</b><span data-pt="FOTÓGRAFOS" data-en="PHOTOGRAPHERS">FOTÓGRAFOS</span></div>
+      <div class="stat"><b>PT</b><span data-pt="+ INTERNACIONAL" data-en="+ INTERNATIONAL">+ INTERNACIONAL</span></div>
     </div>
   </div>
 </section>
-
+ 
 <section class="section" id="reportagens">
   <div class="section-head">
     <div>
       <div class="tag mono">EDITORIAL</div>
-      <h2>Reportagens</h2>
+      <h2 data-pt="Reportagens" data-en="Stories">Reportagens</h2>
     </div>
-    <a href="#" class="see-all">ARQUIVO COMPLETO →</a>
+    <a href="#" class="see-all" data-pt="ARQUIVO COMPLETO →" data-en="FULL ARCHIVE →">ARQUIVO COMPLETO →</a>
   </div>
   <div class="grid">
     <a href="#" class="card feature">
-      <div class="tag-sm mono">2020 · RECUPERADO</div>
-      <h3>O Polo Steilheck de Vitor Santos</h3>
-      <div class="meta">SESSÃO ORIGINAL QUALITYSTANCE</div>
+      <div class="tag-sm mono" data-pt="2020 · RECUPERADO" data-en="2020 · RECOVERED">2020 · RECUPERADO</div>
+      <h3 data-pt="O Polo Steilheck de Vitor Santos" data-en="Vitor Santos' Polo Steilheck">O Polo Steilheck de Vitor Santos</h3>
+      <div class="meta" data-pt="SESSÃO ORIGINAL QUALITYSTANCE" data-en="ORIGINAL QUALITYSTANCE SESSION">SESSÃO ORIGINAL QUALITYSTANCE</div>
     </a>
     <a href="#" class="card">
-      <div class="tag-sm mono">EM BREVE</div>
-      <h3>Bastidores NCRacing</h3>
-      <div class="meta">MAKING-OF</div>
+      <div class="tag-sm mono" data-pt="EM BREVE" data-en="COMING SOON">EM BREVE</div>
+      <h3 data-pt="Bastidores NCRacing" data-en="Behind the Scenes: NCRacing">Bastidores NCRacing</h3>
+      <div class="meta" data-pt="MAKING-OF" data-en="MAKING-OF">MAKING-OF</div>
     </a>
     <a href="#" class="card">
-      <div class="tag-sm mono">EM BREVE</div>
-      <h3>Guia: Ângulos Baixos</h3>
-      <div class="meta">TÉCNICA</div>
+      <div class="tag-sm mono" data-pt="EM BREVE" data-en="COMING SOON">EM BREVE</div>
+      <h3 data-pt="Guia: Ângulos Baixos" data-en="Guide: Low Angles">Guia: Ângulos Baixos</h3>
+      <div class="meta" data-pt="TÉCNICA" data-en="TECHNIQUE">TÉCNICA</div>
     </a>
   </div>
 </section>
-
+ 
 <section class="section" id="loja">
   <div class="section-head">
     <div>
       <div class="tag mono" style="color:var(--signal);">DRAKO3D — PARTS</div>
-      <h2>Peças Para o Teu Carro</h2>
+      <h2 data-pt="Peças Para o Teu Carro" data-en="Parts For Your Car">Peças Para o Teu Carro</h2>
     </div>
-    <a href="https://www.etsy.com/shop/DRAKO3D" target="_blank" class="see-all">VER LOJA ETSY →</a>
+    <a href="https://www.etsy.com/shop/DRAKO3D" target="_blank" class="see-all" data-pt="VER LOJA ETSY →" data-en="VIEW ETSY SHOP →">VER LOJA ETSY →</a>
   </div>
-  <p style="color:var(--mute);font-size:14px;max-width:520px;margin-bottom:32px;line-height:1.6;">
+  <p style="color:var(--mute);font-size:14px;max-width:520px;margin-bottom:32px;line-height:1.6;" data-pt="Impressão 3D sob encomenda para os carros que fotografamos. Se apareceu num evento QLTYSTNC, provavelmente já temos a peça — ou fazemos por medida." data-en="Made-to-order 3D printing for the cars we photograph. If it showed up at a QLTYSTNC event, we probably already have the part — or we'll make it to spec.">
     Impressão 3D sob encomenda para os carros que fotografamos. Se apareceu num evento QLTYSTNC, provavelmente já temos a peça — ou fazemos por medida.
   </p>
   <div class="grid">
     <a href="https://www.etsy.com/shop/DRAKO3D?section_id=smart" target="_blank" class="card feature">
-      <div class="tag-sm mono">MODELO · SMART FORTWO 450/451</div>
-      <h3>Acessórios e Peças de Interior/Exterior</h3>
-      <div class="meta">DRAKO3D · VER NA ETSY</div>
+      <div class="tag-sm mono" data-pt="MODELO · SMART FORTWO 450/451" data-en="MODEL · SMART FORTWO 450/451">MODELO · SMART FORTWO 450/451</div>
+      <h3 data-pt="Acessórios e Peças de Interior/Exterior" data-en="Interior/Exterior Accessories &amp; Parts">Acessórios e Peças de Interior/Exterior</h3>
+      <div class="meta" data-pt="DRAKO3D · VER NA ETSY" data-en="DRAKO3D · VIEW ON ETSY">DRAKO3D · VER NA ETSY</div>
     </a>
     <a href="https://www.etsy.com/shop/DRAKO3D?section_id=nissan" target="_blank" class="card">
-      <div class="tag-sm mono">MODELO · NISSAN TERRANO</div>
-      <h3>Peças Técnicas</h3>
-      <div class="meta">DRAKO3D · VER NA ETSY</div>
+      <div class="tag-sm mono" data-pt="MODELO · NISSAN TERRANO" data-en="MODEL · NISSAN TERRANO">MODELO · NISSAN TERRANO</div>
+      <h3 data-pt="Peças Técnicas" data-en="Technical Parts">Peças Técnicas</h3>
+      <div class="meta" data-pt="DRAKO3D · VER NA ETSY" data-en="DRAKO3D · VIEW ON ETSY">DRAKO3D · VER NA ETSY</div>
     </a>
     <a href="https://www.etsy.com/shop/DRAKO3D?section_id=moto" target="_blank" class="card">
-      <div class="tag-sm mono">FAIRINGS · MOTO</div>
-      <h3>Carenagens e Suportes</h3>
-      <div class="meta">DRAKO3D · VER NA ETSY</div>
+      <div class="tag-sm mono" data-pt="FAIRINGS · MOTO" data-en="FAIRINGS · MOTORCYCLE">FAIRINGS · MOTO</div>
+      <h3 data-pt="Carenagens e Suportes" data-en="Fairings &amp; Brackets">Carenagens e Suportes</h3>
+      <div class="meta" data-pt="DRAKO3D · VER NA ETSY" data-en="DRAKO3D · VIEW ON ETSY">DRAKO3D · VER NA ETSY</div>
     </a>
   </div>
   <div style="margin-top:20px;font-size:12px;color:var(--mute);font-family:'JetBrains Mono',monospace;">
-    NÃO ENCONTRAS O TEU MODELO? <a href="#contacto" style="color:var(--signal);border-bottom:1px solid var(--signal);">PEDE ORÇAMENTO →</a>
+    <span data-pt="NÃO ENCONTRAS O TEU MODELO?" data-en="CAN'T FIND YOUR MODEL?">NÃO ENCONTRAS O TEU MODELO?</span> <a href="#contacto" style="color:var(--signal);border-bottom:1px solid var(--signal);" data-pt="PEDE ORÇAMENTO →" data-en="REQUEST A QUOTE →">PEDE ORÇAMENTO →</a>
   </div>
 </section>
-
+ 
 <footer id="contacto">
   <div class="foot-top">
     <div class="foot-logo">QLTY<span>STNC</span></div>
     <div class="foot-links">
-      <a href="#projetos">Projetos</a>
-      <a href="#reportagens">Reportagens</a>
-      <a href="#loja">Loja</a>
-      <a href="mailto:contacto@qltystnc.com">Contacto</a>
+      <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+      <a href="#reportagens" data-pt="Reportagens" data-en="Stories">Reportagens</a>
+      <a href="#loja" data-pt="Loja" data-en="Shop">Loja</a>
+      <a href="mailto:contacto@qltystnc.com" data-pt="Contacto" data-en="Contact">Contacto</a>
       <a href="#">Instagram</a>
       <a href="#">Facebook</a>
     </div>
   </div>
   <div class="foot-bottom">
     <span>© 2026 QLTYSTNC — RICARDO ROCHA</span>
-    <span>PORTO · PORTUGAL</span>
+    <span data-pt="PORTO · PORTUGAL" data-en="PORTO · PORTUGAL">PORTO · PORTUGAL</span>
   </div>
 </footer>
-
+ 
 <!--
   CLOUDFLARE WEB ANALYTICS
   Passo a passo (fazer no computador):
@@ -374,7 +398,7 @@
   So tu tens acesso, com o teu login.
 -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "COLA_AQUI_O_TEU_TOKEN"}'></script>
-
+ 
 <!--
   PAINEL DE ARTIGOS / SESSOES (Decap CMS)
   Passo a passo (fazer no computador, depois do Cloudflare):
@@ -400,6 +424,34 @@
     });
   }
 </script>
-
+ 
+<!-- LANG TOGGLE PT/EN -->
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-pt]').forEach(function(el) {
+      var text = el.getAttribute('data-' + lang);
+      if (text !== null) {
+        if (text.indexOf('<') !== -1) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      }
+    });
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('qltystnc-lang', lang); } catch(e) {}
+  }
+  document.getElementById('btn-pt').addEventListener('click', function(){ setLang('pt'); });
+  document.getElementById('btn-en').addEventListener('click', function(){ setLang('en'); });
+  (function() {
+    var saved = null;
+    try { saved = localStorage.getItem('qltystnc-lang'); } catch(e) {}
+    if (saved === 'en') { setLang('en'); }
+  })();
+</script>
+ 
 </body>
 </html>
+ 
