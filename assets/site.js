@@ -30,6 +30,7 @@
   }
 
   function inlineMd(s) {
+    // clean up stray backslash-escapes that some editors insert
     s = s.replace(/\\([*_~|])/g, "$1");
     s = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
@@ -38,11 +39,13 @@
   }
 
   function markdownToHtml(md) {
+    // normalize stray backslash-escapes before splitting into blocks
     md = md.replace(/\\([*_~|])/g, "$1");
     var blocks = md.split(/\n\s*\n/);
     var html = blocks.map(function (block) {
       block = block.trim();
       if (!block) return "";
+      // standalone image: ![alt](src)
       var imgOnly = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
       if (imgOnly) {
         return '<img src="' + imgOnly[2] + '" alt="' + imgOnly[1] + '" style="width:100%;border:1px solid var(--line);margin:8px 0;">';
@@ -60,6 +63,7 @@
       if (/^\*\*(.+)\*\*$/.test(block) && block.split("\n").length === 1) {
         return "<h3>" + inlineMd(block.replace(/\*\*/g, "")) + "</h3>";
       }
+      // inline images mixed with text, or plain paragraph
       var withImages = block.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (m, alt, src) {
         return '<img src="' + src + '" alt="' + alt + '" style="width:100%;border:1px solid var(--line);margin:8px 0;">';
       });
@@ -87,6 +91,7 @@
   }
 
   function getCollection(type) {
+    // type: "reportagens" | "sessoes"
     return getTree().then(function (tree) {
       var prefix = "content/" + type + "/";
       var files = tree.tree.filter(function (item) {
@@ -133,11 +138,13 @@
     var href = "post.html?type=" + entry.type + "&slug=" + encodeURIComponent(entry.slug);
     var tagLabel = d.tipo || fmtDate(d.date) || "";
     var metaLabel = d.localizacao || d.subtitulo || d.creditos || "";
-    var bgStyle = d.capa
+    var hasCover = !!d.capa;
+    var bgStyle = hasCover
       ? ' style="background-image:url(\'' + d.capa + '\');background-size:cover;background-position:center;"'
       : "";
+    var coverClass = hasCover ? " has-cover" : "";
     return (
-      '<a href="' + href + '" class="card' + (featured ? " feature" : "") + '"' + bgStyle + '>' +
+      '<a href="' + href + '" class="card' + (featured ? " feature" : "") + coverClass + '"' + bgStyle + '>' +
       '<div class="tag-sm mono">' + (tagLabel || "").toUpperCase() + "</div>" +
       "<h3>" + (d.title || "Sem título") + "</h3>" +
       '<div class="meta">' + (metaLabel || "").toUpperCase() + "</div>" +
@@ -149,7 +156,7 @@
     var el = document.getElementById(containerId);
     if (!el) return;
     getCollection(type).then(function (entries) {
-      if (!entries.length) return;
+      if (!entries.length) return; // keep existing static fallback cards
       var slice = entries.slice(0, limit || 3);
       el.innerHTML = slice.map(function (entry, i) {
         return cardHtml(entry, i === 0);
