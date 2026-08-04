@@ -73,6 +73,7 @@
   }
 
   function getCollection(type) {
+    // type: "reportagens" | "sessoes"
     return getTree().then(function (tree) {
       var prefix = "content/" + type + "/";
       var files = tree.tree.filter(function (item) {
@@ -132,7 +133,7 @@
     var el = document.getElementById(containerId);
     if (!el) return;
     getCollection(type).then(function (entries) {
-      if (!entries.length) return;
+      if (!entries.length) return; // keep existing static fallback cards
       var slice = entries.slice(0, limit || 3);
       el.innerHTML = slice.map(function (entry, i) {
         return cardHtml(entry, i === 0);
