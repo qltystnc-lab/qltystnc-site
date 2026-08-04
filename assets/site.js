@@ -164,6 +164,24 @@
     });
   }
 
+  function renderMixedGrid(containerId, types, limit) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    Promise.all(types.map(getCollection)).then(function (results) {
+      var entries = [].concat.apply([], results);
+      entries.sort(function (a, b) {
+        var da = new Date(a.data.date || 0).getTime();
+        var db = new Date(b.data.date || 0).getTime();
+        return db - da;
+      });
+      if (!entries.length) return; // keep existing static fallback cards
+      var slice = entries.slice(0, limit || 3);
+      el.innerHTML = slice.map(function (entry, i) {
+        return cardHtml(entry, i === 0);
+      }).join("");
+    });
+  }
+
   function renderPost() {
     var params = new URLSearchParams(window.location.search);
     var type = params.get("type");
@@ -200,6 +218,7 @@
 
   window.QLTYSTNC = {
     renderGrid: renderGrid,
+    renderMixedGrid: renderMixedGrid,
     renderPost: renderPost
   };
 })();
