@@ -1,1 +1,46 @@
-admin/config.yml
+# Use DecapBridge PKCE auth (required)
+backend:
+  name: git-gateway
+  repo: qltystnc-lab/qltystnc-site
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/4adfffbd-c8f3-4e8b-bcb7-af7c832b6bac/pkce
+  auth_token_endpoint: /sites/4adfffbd-c8f3-4e8b-bcb7-af7c832b6bac/token
+  gateway_url: https://gateway.decapbridge.com
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+site_url: https://qltystnc.com
+
+collections:
+  - name: "sessoes"
+    label: "Sessões / Projetos"
+    label_singular: "Sessão"
+    folder: "content/sessoes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "select", options: ["Evento", "Sessão", "Drift"] }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Localização", name: "localizacao", widget: "string", required: false }
+      - { label: "Foto de capa", name: "capa", widget: "image" }
+      - { label: "Galeria (fotos adicionais)", name: "galeria", widget: "list", field: { label: "Foto", name: "foto", widget: "image" }, required: false }
+      - { label: "Texto / Legenda", name: "body", widget: "markdown" }
+      - { label: "Destacar na home", name: "destaque", widget: "boolean", default: false }
+
+  - name: "reportagens"
+    label: "Reportagens"
+    label_singular: "Reportagem"
+    folder: "content/reportagens"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Subtítulo / linha editorial", name: "subtitulo", widget: "string", required: false }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Foto de capa", name: "capa", widget: "image" }
+      - { label: "Texto completo", name: "body", widget: "markdown" }
+      - { label: "Créditos (fotógrafo/piloto)", name: "creditos", widget: "string", required: false }
