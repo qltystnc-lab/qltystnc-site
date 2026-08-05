@@ -49,8 +49,7 @@
     background:rgba(10,10,10,0.9);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
-  }
-  .nav .logo{
+  }  .nav .logo{
     font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;
     letter-spacing:0.04em;
   }
@@ -58,13 +57,25 @@
   .nav-links{display:none;gap:28px;font-size:13px;letter-spacing:0.1em;}
   .nav-links a{opacity:0.85;}
   .nav-links a:hover{color:var(--signal);opacity:1;}
+  .nav-links.open{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--black);
+    border-bottom:1px solid var(--line);
+    padding:8px 20px 16px;
+  }
+  .nav-links.open a{padding:12px 0;border-bottom:1px solid var(--line);opacity:1;}
+  .nav-links.open a:last-child{border-bottom:none;}
   .burger{width:22px;height:16px;position:relative;cursor:pointer;}
-  .burger span{display:block;height:2px;background:var(--off);position:absolute;left:0;right:0;}
+  .burger span{display:block;height:2px;background:var(--off);position:absolute;left:0;right:0;transition:all .2s ease;}
   .burger span:nth-child(1){top:0;}
   .burger span:nth-child(2){top:7px;}
   .burger span:nth-child(3){top:14px;}
+  .burger.open span:nth-child(1){top:7px;transform:rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){top:7px;transform:rotate(-45deg);}
   @media(min-width:860px){
-    .nav-links{display:flex;}
+    .nav-links{display:flex;position:static;background:none;border:none;padding:0;}
     .burger{display:none;}
   }
 
@@ -451,6 +462,25 @@
       }
     });
   }
+</script>
+
+<!-- MOBILE MENU TOGGLE -->
+<script>
+  (function () {
+    var burger = document.querySelector('.burger');
+    var links = document.querySelector('.nav-links');
+    if (!burger || !links) return;
+    burger.addEventListener('click', function () {
+      burger.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        burger.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+  })();
 </script>
 
 <!-- LANG TOGGLE PT/EN -->
