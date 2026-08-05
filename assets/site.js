@@ -258,7 +258,7 @@
           (wereGoing ? '<span class="mono ev-badge">QLTYSTNC LÁ</span>' : "") +
         "</div>" +
         "<h3>" + (d.title || "") + "</h3>" +
-        '<div class="meta">' + (d.localizacao || "").toUpperCase() + (d.pais === "Estrangeiro" ? " · ESTRANGEIRO" : "") + "</div>" +
+        '<div class="meta">' + (d.localizacao || "").toUpperCase() + (!isPT ? " · " + (d.pais_nome ? d.pais_nome.toUpperCase() : "ESTRANGEIRO") : "") + "</div>" +
         countdownHtml +
       "</div>" +
       linkClose
