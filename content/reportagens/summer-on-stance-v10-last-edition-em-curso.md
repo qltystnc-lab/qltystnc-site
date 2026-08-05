@@ -30,8 +30,7 @@ Era o momento certo para regressar.
 
 ## Um evento que continua a fazer a diferença
 
-📷 **Imagem 3**
-*Fotografia ampla do recinto cheia de carros e pessoas.*
+![](/uploads/dsc07362.jpg)
 
 Entrar no recinto foi perceber rapidamente porque é que o Summer On Stance conquistou um lugar tão especial entre os entusiastas.
 
@@ -39,8 +38,7 @@ A qualidade dos projectos continua impressionante. Dos clássicos aos modelos ma
 
 Cada carro mostrava horas de dedicação, atenção ao detalhe e paixão pelo que faz parte desta cultura.
 
-📷 **Imagem 4**
-*Conjunto de detalhes. Jantes, interiores, motores, acabamentos ou pequenos pormenores.*
+![](/uploads/f15766272.jpg)
 
 Mas o verdadeiro destaque continua a ser o ambiente.
 
@@ -48,8 +46,7 @@ O Summer On Stance nunca foi apenas uma exposição de automóveis. É um ponto 
 
 ## Voltar a fotografar
 
-📷 **Imagem 5**
-*Fotografia captada por ti de um dos carros que mais gostaste ou uma imagem mais artística.*
+![](/uploads/f14704128.jpg)
 
 Depois de tanto tempo afastados, voltar a percorrer o recinto com a máquina ao pescoço fez lembrar porque é que a fotografia automóvel continua a ser tão especial.
 
@@ -61,8 +58,7 @@ Foi precisamente essa sensação que voltou durante este fim de semana.
 
 ## O espaço dedicado às lendas
 
-📷 **Imagem 6**
-*Fotografia da zona "Legends" ou de vários carros dessa área.*
+![](/uploads/f9868800.jpg)
 
 Uma das grandes novidades desta edição foi a criação de uma área dedicada às lendas do Summer On Stance.
 
@@ -72,8 +68,7 @@ Foi um dos locais mais visitados do recinto e uma excelente forma de reconhecer 
 
 ## Reencontros que ficam
 
-📷 **Imagem 7**
-*Fotografia de pessoas a conversar, amigos reunidos ou um momento espontâneo do evento.*
+![](/uploads/dsc07512.jpg)
 
 Os carros foram a razão para lá estar. As pessoas acabaram por ser uma das melhores partes do fim de semana.
 
@@ -87,8 +82,7 @@ São momentos como estes que dão ainda mais vontade de continuar.
 
 ## Uma despedida... e um novo começo
 
-📷 **Imagem 8**
-*Uma fotografia do final do dia. Luz dourada, pôr do sol ou uma imagem marcante que transmita o fim do evento.*
+
 
 Ao longo de dez edições, o Summer On Stance tornou-se muito mais do que um evento automóvel. Tornou-se um ponto de encontro para uma comunidade que cresceu em conjunto, inspirou novos projectos e ajudou a elevar a cultura stance em Portugal.
 
@@ -101,8 +95,5 @@ Foi um recomeço.
 A máquina voltou ao pescoço. O calendário já começa novamente a encher-se de eventos. E a vontade de voltar a contar histórias através da fotografia está mais viva do que nunca.
 
 O Summer On Stance despede-se. O **QLTYSTNC** está de volta.
-
-📷 **Imagem 9 (Fotografia final)**
-*Uma imagem forte para fechar o artigo. Pode ser um carro a sair do recinto, uma fotografia noturna ou uma das tuas melhores imagens do fim de semana.*
 
 **Fotos & Texto: QLTYSTNC**
