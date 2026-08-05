@@ -15,6 +15,24 @@ public_folder: "/uploads"
 site_url: https://qltystnc.com
 
 collections:
+  - name: "eventos"
+    label: "Calendário de Eventos"
+    label_singular: "Evento"
+    folder: "content/eventos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome do Evento", name: "title", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "select", options: ["Drift", "Stance", "Track Day", "Exposição", "Convívio", "Rali", "Outro"] }
+      - { label: "País", name: "pais", widget: "select", options: ["Portugal", "Estrangeiro"], default: "Portugal" }
+      - { label: "Data de Início", name: "date", widget: "datetime" }
+      - { label: "Data de Fim (opcional, se for mais de 1 dia)", name: "date_fim", widget: "datetime", required: false }
+      - { label: "Localização", name: "localizacao", widget: "string" }
+      - { label: "Link Oficial (site/facebook/instagram do evento)", name: "link", widget: "string", required: false }
+      - { label: "QLTYSTNC vai estar presente?", name: "vamos", widget: "boolean", default: false }
+      - { label: "Foto de capa", name: "capa", widget: "image", required: false }
+      - { label: "Notas / Descrição", name: "body", widget: "markdown", required: false }
+
   - name: "sessoes"
     label: "Sessões / Projetos"
     label_singular: "Sessão"
