@@ -216,9 +216,97 @@
     });
   }
 
+  function fmtDateShort(d) {
+    if (!d) return "";
+    var dt = new Date(d);
+    if (isNaN(dt.getTime())) return "";
+    var dd = String(dt.getDate()).padStart(2, "0");
+    var mm = String(dt.getMonth() + 1).padStart(2, "0");
+    return dd + "/" + mm;
+  }
+
+  function daysUntil(d) {
+    var dt = new Date(d);
+    if (isNaN(dt.getTime())) return null;
+    var now = new Date();
+    var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var diff = Math.ceil((dt - startOfToday) / (1000 * 60 * 60 * 24));
+    return diff;
+  }
+
+  function eventRowHtml(entry, isNext) {
+    var d = entry.data;
+    var isPT = (d.pais || "Portugal") === "Portugal";
+    var countryColor = isPT ? "var(--signal)" : "var(--sea)";
+    var dateLabel = fmtDateShort(d.date) + (d.date_fim ? " – " + fmtDateShort(d.date_fim) : "");
+    var wereGoing = String(d.vamos) === "true";
+    var countdown = isNext ? daysUntil(d.date) : null;
+    var countdownHtml = (countdown !== null && countdown >= 0)
+      ? '<div class="mono" style="font-size:10px;color:' + countryColor + ';margin-top:6px;">' +
+          (countdown === 0 ? "É HOJE" : countdown === 1 ? "FALTA 1 DIA" : "FALTAM " + countdown + " DIAS") +
+        "</div>"
+      : "";
+    var linkOpen = d.link ? '<a href="' + d.link + '" target="_blank" class="ev-row">' : '<div class="ev-row">';
+    var linkClose = d.link ? "</a>" : "</div>";
+    return (
+      linkOpen +
+      '<div class="ev-date mono" style="color:' + countryColor + ';">' + dateLabel + "</div>" +
+      '<div class="ev-body">' +
+        '<div class="ev-top">' +
+          '<span class="ev-country-dot" style="background:' + countryColor + ';"></span>' +
+          '<span class="mono" style="font-size:10px;color:var(--mute);">' + (d.tipo || "").toUpperCase() + "</span>" +
+          (wereGoing ? '<span class="mono ev-badge">QLTYSTNC LÁ</span>' : "") +
+        "</div>" +
+        "<h3>" + (d.title || "") + "</h3>" +
+        '<div class="meta">' + (d.localizacao || "").toUpperCase() + (d.pais === "Estrangeiro" ? " · ESTRANGEIRO" : "") + "</div>" +
+        countdownHtml +
+      "</div>" +
+      linkClose
+    );
+  }
+
+  function renderCalendar(upcomingId, pastId, filter) {
+    var upEl = document.getElementById(upcomingId);
+    var pastEl = document.getElementById(pastId);
+    if (!upEl) return;
+    getCollection("eventos").then(function (entries) {
+      if (filter && filter !== "todos") {
+        var wantPT = filter === "portugal";
+        entries = entries.filter(function (e) {
+          return ((e.data.pais || "Portugal") === "Portugal") === wantPT;
+        });
+      }
+      var now = new Date();
+      var upcoming = entries.filter(function (e) {
+        var end = e.data.date_fim ? new Date(e.data.date_fim) : new Date(e.data.date);
+        return end >= now;
+      }).sort(function (a, b) {
+        return new Date(a.data.date) - new Date(b.data.date);
+      });
+      var past = entries.filter(function (e) {
+        var end = e.data.date_fim ? new Date(e.data.date_fim) : new Date(e.data.date);
+        return end < now;
+      }).sort(function (a, b) {
+        return new Date(b.data.date) - new Date(a.data.date);
+      });
+
+      upEl.innerHTML = upcoming.length
+        ? upcoming.map(function (e, i) { return eventRowHtml(e, i === 0); }).join("")
+        : '<p class="mono" style="color:var(--mute);font-size:13px;">Sem eventos agendados de momento.</p>';
+
+      if (pastEl) {
+        pastEl.innerHTML = past.length
+          ? past.map(function (e) { return eventRowHtml(e, false); }).join("")
+          : '<p class="mono" style="color:var(--mute);font-size:13px;">Sem eventos passados registados.</p>';
+        pastEl.style.opacity = "0.55";
+      }
+    });
+  }
+
   window.QLTYSTNC = {
     renderGrid: renderGrid,
     renderMixedGrid: renderMixedGrid,
-    renderPost: renderPost
+    renderPost: renderPost,
+    renderCalendar: renderCalendar
   };
 })();
