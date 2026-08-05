@@ -1,8 +1,9 @@
 ---
-title: Summer On Stance V10 - LAST EDITION *Em Curso*
+title: Summer On Stance V10 - LAST EDITION
 subtitulo: EVENTO
 date: 2026-08-01T14:00:00.000+01:00
 capa: /uploads/dsc07367.jpg
+creditos: ""
 ---
 # Summer On Stance V10 – Last Dance
 
@@ -10,11 +11,7 @@ capa: /uploads/dsc07367.jpg
 
 ![](/uploads/dsc07480.jpg)
 
-Há eventos que deixam marca. **O Summer On Stance** foi um deles durante uma década. A décima edição, baptizada **Last Dance**, assinalou o fim de um dos encontros mais emblemáticos da cultura stance em Portugal. Um último fim de semana que voltou a reunir alguns dos melhores projectos nacionais e internacionais, centenas de automóveis e uma comunidade que continua tão forte como sempre.
-
-Mais do que uma despedida, esta edição foi uma celebração de tudo o que tornou o Summer On Stance uma referência. Qualidade, paixão pelos detalhes e um ambiente que, ano após ano, fez deste evento uma paragem obrigatória para quem vive a cultura automóvel.
-
-Para o **QLTYSTNC**, este fim de semana teve também um significado especial. Depois de vários anos afastados da scene, foi o momento de voltar.
+Há eventos que deixam marca. O Summer On Stance foi um deles durante uma década. A décima edição, baptizada Last Dance, assinalou o fim de um dos encontros mais emblemáticos da cultura stance em Portugal — um último fim de semana que reuniu alguns dos melhores projectos nacionais e internacionais, centenas de automóveis e uma comunidade tão forte como sempre.Mais do que uma despedida, esta edição foi uma celebração de tudo o que tornou o Summer On Stance uma referência: qualidade, paixão pelos detalhes e um ambiente que, ano após ano, fez deste evento uma paragem obrigatória para quem vive a cultura automóvel.Para a QLTYSTNC, este fim de semana teve um significado especial — foi o regresso oficial aos eventos, depois de uma prova de drift há poucas semanas ter reacendido a vontade de voltar a fazer isto a sério.
 
 ## O regresso
 
@@ -34,9 +31,9 @@ Era o momento certo para regressar.
 
 Entrar no recinto foi perceber rapidamente porque é que o Summer On Stance conquistou um lugar tão especial entre os entusiastas.
 
-A qualidade dos projectos continua impressionante. Dos clássicos aos modelos mais recentes, das preparações discretas às construções mais ousadas, havia espaço para praticamente todos os estilos.
+A qualidade dos projectos continua impressionante. Dos clássicos aos modelos mais recentes, das preparações discretas às construções mais ousadas, havia espaço para praticamente todos os estilos. Cada carro mostrava horas de dedicação, atenção ao detalhe e paixão pelo que representa esta cultura.
 
-Cada carro mostrava horas de dedicação, atenção ao detalhe e paixão pelo que faz parte desta cultura.
+
 
 ![](/uploads/f15766272.jpg)
 
@@ -44,17 +41,21 @@ Mas o verdadeiro destaque continua a ser o ambiente.
 
 O Summer On Stance nunca foi apenas uma exposição de automóveis. É um ponto de encontro onde se reencontram amigos, nascem novas amizades e se passam horas a conversar sobre mecânica, modificações, fotografia e tudo aquilo que une esta comunidade.
 
-## Voltar a fotografar
+Foi precisamente esse ambiente que voltou a fazer a diferença nesta última edição.
+
+
+
+## Contar histórias através da objetiva
 
 ![](/uploads/f14704128.jpg)
 
-Depois de tanto tempo afastados, voltar a percorrer o recinto com a máquina ao pescoço fez lembrar porque é que a fotografia automóvel continua a ser tão especial.
+Percorrer novamente o recinto com a câmara na mão fez lembrar porque é que a fotografia automóvel continua a ser tão especial.
 
 Cada projecto oferece uma nova perspectiva. Há sempre um detalhe escondido, um reflexo inesperado ou uma composição diferente à espera de ser descoberta.
 
-Mais do que fotografar carros, é contar histórias através das imagens.
+Mais do que fotografar carros, é captar momentos, preservar detalhes e contar histórias através das imagens. E essa sensação esteve presente durante todo o fim de semana.
 
-Foi precisamente essa sensação que voltou durante este fim de semana.
+
 
 ## O espaço dedicado às lendas
 
@@ -64,7 +65,9 @@ Uma das grandes novidades desta edição foi a criação de uma área dedicada �
 
 Um espaço pensado para homenagear alguns dos projectos e proprietários que acompanharam praticamente toda a história do evento e ajudaram a construir aquilo que o Summer On Stance representa hoje.
 
-Foi um dos locais mais visitados do recinto e uma excelente forma de reconhecer quem, ao longo dos anos, contribuiu para elevar o nível da cultura stance em Portugal.
+Foi um dos locais mais visitados do recinto e uma excelente forma de reconhecer quem, ao longo dos anos, ajudou a elevar o nível da cultura stance em Portugal.
+
+.
 
 ## Reencontros que ficam
 
@@ -74,26 +77,30 @@ Os carros foram a razão para lá estar. As pessoas acabaram por ser uma das mel
 
 Voltámos a encontrar amigos que já não víamos há vários anos e percebemos que algumas conversas simplesmente continuam de onde ficaram.
 
-Houve também uma surpresa inesperada.
+Houve também uma surpresa inesperada. Várias pessoas reconheceram o nome **QLTYSTNC**, apesar do tempo de ausência. Saber que o trabalho desenvolvido no passado continua presente na memória de quem acompanha esta comunidade só aumenta a vontade de continuar.
 
-Várias pessoas reconheceram o nome **QLTYSTNC**, apesar do tempo de ausência. Receber esse reconhecimento mostrou que o trabalho realizado no passado continua presente na memória de quem acompanha esta comunidade.
+São momentos como estes que fazem perceber que esta cultura vai muito além dos automóveis.
 
-São momentos como estes que dão ainda mais vontade de continuar.
+
 
 ## Uma despedida... e um novo começo
-
-
 
 Ao longo de dez edições, o Summer On Stance tornou-se muito mais do que um evento automóvel. Tornou-se um ponto de encontro para uma comunidade que cresceu em conjunto, inspirou novos projectos e ajudou a elevar a cultura stance em Portugal.
 
 Se esta foi realmente a última edição, dificilmente poderia ter terminado de melhor forma. O recinto voltou a encher, a qualidade manteve-se ao mais alto nível e o ambiente fez justiça ao legado construído ao longo destes anos.
 
-Quanto ao **QLTYSTNC**, este não foi um fim.
+Para a **QLTYSTNC**, este não foi um ponto final.
 
-Foi um recomeço.
+Foi um novo começo.
 
-A máquina voltou ao pescoço. O calendário já começa novamente a encher-se de eventos. E a vontade de voltar a contar histórias através da fotografia está mais viva do que nunca.
+O calendário já começa a ganhar forma, há novos eventos no horizonte e a vontade de continuar a documentar esta cultura é maior do que nunca.
 
-O Summer On Stance despede-se. O **QLTYSTNC** está de volta.
+O Summer On Stance chega ao fim, talvez novidades apareçam...
+
+A paixão por esta cultura continua.
+
+E a **QLTYSTNC** estará lá para a contar.
+
+
 
 **Fotos & Texto: QLTYSTNC**
