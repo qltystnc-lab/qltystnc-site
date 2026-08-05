@@ -25,6 +25,7 @@ collections:
       - { label: "Nome do Evento", name: "title", widget: "string" }
       - { label: "Tipo", name: "tipo", widget: "select", options: ["Drift", "Stance", "Track Day", "Exposição", "Convívio", "Rali", "Outro"] }
       - { label: "País", name: "pais", widget: "select", options: ["Portugal", "Estrangeiro"], default: "Portugal" }
+      - { label: "Nome do País (se Estrangeiro)", name: "pais_nome", widget: "string", required: false, hint: "Ex: Espanha, França — só preenche se o evento for no estrangeiro" }
       - { label: "Data de Início", name: "date", widget: "datetime" }
       - { label: "Data de Fim (opcional, se for mais de 1 dia)", name: "date_fim", widget: "datetime", required: false }
       - { label: "Localização", name: "localizacao", widget: "string" }
