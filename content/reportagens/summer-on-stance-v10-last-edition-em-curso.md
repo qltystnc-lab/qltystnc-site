@@ -9,7 +9,7 @@ creditos: ""
 
 **1 e 2 de Agosto de 2026 — QLTYSTNC**
 
-![](/uploads/dsc07480.jpg)
+![](/uploads/dsc07480.jpg) 
 
 Há eventos que deixam marca. O Summer On Stance foi um deles durante uma década. A décima edição, "Last Dance", assinalou o fim de um dos encontros mais emblemáticos da cultura stance em Portugal — um último fim de semana que reuniu alguns dos melhores projectos nacionais e internacionais, centenas de automóveis e uma comunidade tão forte como sempre.Mais do que uma despedida, esta edição foi uma celebração de tudo o que tornou o Summer On Stance uma referência: qualidade, paixão pelos detalhes e um ambiente que, ano após ano, fez deste evento uma paragem obrigatória para quem vive a cultura automóvel.Para a QLTYSTNC, este fim de semana teve um significado especial — foi o regresso oficial aos eventos, depois de uma prova de drift há poucas semanas ter reacendido a vontade de voltar a fazer isto a sério.
 
