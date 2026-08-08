@@ -303,10 +303,49 @@
     });
   }
 
+  function productCardHtml(entry) {
+    var d = entry.data;
+    var hasCover = !!d.foto;
+    var bgStyle = hasCover
+      ? ' style="background-image:url(\'' + d.foto + '\');background-size:cover;background-position:center;"'
+      : "";
+    var coverClass = hasCover ? " has-cover" : "";
+    var primaryLink = d.link_paypal || d.link_stripe;
+    var primaryLabel = d.link_paypal ? "COMPRAR VIA PAYPAL →" : "COMPRAR →";
+    var primaryBtn = primaryLink
+      ? '<a href="' + primaryLink + '" target="_blank" class="buy-btn stripe" onclick="event.stopPropagation();">' + primaryLabel + "</a>"
+      : "";
+    var secondaryBtn = (d.link_paypal && d.link_stripe)
+      ? '<a href="' + d.link_stripe + '" target="_blank" class="buy-btn paypal" onclick="event.stopPropagation();">CARTÃO / MB WAY</a>'
+      : "";
+    return (
+      '<div class="card' + coverClass + '"' + bgStyle + '>' +
+      '<div class="tag-sm mono">' + (d.linha || "").toUpperCase() + "</div>" +
+      "<h3>" + (d.title || "Sem título") + "</h3>" +
+      (d.preco ? '<div class="price">' + d.preco + "€</div>" : "") +
+      '<div class="meta" style="margin-bottom:12px;">' + (d.subtitulo || "").toUpperCase() + "</div>" +
+      '<div class="buy-row">' + primaryBtn + secondaryBtn + "</div>" +
+      "</div>"
+    );
+  }
+
+  function renderStore(containerId) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    getCollection("produtos").then(function (entries) {
+      if (!entries.length) {
+        el.innerHTML = '<p class="mono" style="color:var(--mute);font-size:13px;">Sem produtos disponíveis de momento.</p>';
+        return;
+      }
+      el.innerHTML = entries.map(productCardHtml).join("");
+    });
+  }
+
   window.QLTYSTNC = {
     renderGrid: renderGrid,
     renderMixedGrid: renderMixedGrid,
     renderPost: renderPost,
-    renderCalendar: renderCalendar
+    renderCalendar: renderCalendar,
+    renderStore: renderStore
   };
 })();
