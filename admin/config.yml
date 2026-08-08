@@ -15,6 +15,23 @@ public_folder: "/uploads"
 site_url: https://qltystnc.com
 
 collections:
+  - name: "produtos"
+    label: "Loja — Produtos"
+    label_singular: "Produto"
+    folder: "content/produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome do Produto", name: "title", widget: "string" }
+      - { label: "Linha", name: "linha", widget: "select", options: ["DRAKO 3D", "ZOOP", "AURE"] }
+      - { label: "Descrição Curta", name: "subtitulo", widget: "string", required: false, hint: "Ex: Compatível Smart Fortwo 450/451" }
+      - { label: "Preço (€)", name: "preco", widget: "number", value_type: "float" }
+      - { label: "Foto", name: "foto", widget: "image" }
+      - { label: "Link PayPal", name: "link_paypal", widget: "string", hint: "Cola aqui o link do botão PayPal (paypal.me/... ou link 'Buy Now')" }
+      - { label: "Link de Pagamento Stripe (opcional, para mais tarde)", name: "link_stripe", widget: "string", required: false, hint: "Deixa vazio por agora — ativa quando quiseres usar Stripe/MB WAY" }
+      - { label: "Data (para ordenação)", name: "date", widget: "datetime" }
+      - { label: "Notas / Descrição completa", name: "body", widget: "markdown", required: false }
+
   - name: "eventos"
     label: "Calendário de Eventos"
     label_singular: "Evento"
