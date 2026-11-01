@@ -29,6 +29,23 @@
     return { data: data, body: body.trim() };
   }
 
+  // ---- Image optimisation (Netlify Image CDN) ----
+  // Originals in /uploads stay untouched; the browser receives a resized
+  // WebP/AVIF version sized for the screen. Falls back to the original on error.
+  function optUrl(src, w) {
+    if (!src || !/^\/uploads\/.+\.(jpe?g|png|webp)$/i.test(src)) return src;
+    return "/.netlify/images?url=" + encodeURIComponent(src) + "&w=" + w + "&q=85";
+  }
+  function imgTag(src, alt, style, eager) {
+    var opt = optUrl(src, 1600);
+    var attrs = ' alt="' + (alt || "") + '" style="' + style + '"' +
+      (eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"';
+    if (opt === src) return '<img src="' + src + '"' + attrs + '>';
+    var srcset = [800, 1200, 1600, 2400].map(function (w) { return optUrl(src, w) + " " + w + "w"; }).join(", ");
+    return '<img src="' + opt + '" srcset="' + srcset + '" sizes="(max-width: 760px) 100vw, 760px"' + attrs +
+      ' onerror="this.onerror=null;this.removeAttribute(\'srcset\');this.src=\'' + src + '\'">';
+  }
+
   function inlineMd(s) {
     // clean up stray backslash-escapes that some editors insert
     s = s.replace(/\\([*_~|])/g, "$1");
@@ -48,7 +65,12 @@
       // standalone image: ![alt](src)
       var imgOnly = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
       if (imgOnly) {
-        return '<img src="' + imgOnly[2] + '" alt="' + imgOnly[1] + '" style="width:100%;border:1px solid var(--line);margin:8px 0;">';
+        return imgTag(imgOnly[2], imgOnly[1], "width:100%;border:1px solid var(--line);margin:8px 0;");
+      }
+      // headings: "## Title" or "### Title"
+      var heading = block.match(/^#{1,4}\s+(.+)$/);
+      if (heading && block.split("\n").length === 1) {
+        return "<h3>" + inlineMd(heading[1]) + "</h3>";
       }
       if (block.indexOf(">") === 0) {
         var quote = block.replace(/^>\s?/gm, "");
@@ -65,7 +87,7 @@
       }
       // inline images mixed with text, or plain paragraph
       var withImages = block.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function (m, alt, src) {
-        return '<img src="' + src + '" alt="' + alt + '" style="width:100%;border:1px solid var(--line);margin:8px 0;">';
+        return imgTag(src, alt, "width:100%;border:1px solid var(--line);margin:8px 0;");
       });
       if (withImages !== block) {
         return withImages.split("\n").map(function(line){
@@ -140,7 +162,7 @@
     var metaLabel = d.localizacao || d.subtitulo || d.creditos || "";
     var hasCover = !!d.capa;
     var bgStyle = hasCover
-      ? ' style="background-image:url(\'' + d.capa + '\');background-size:cover;background-position:center;"'
+      ? ' style="background-image:url(\'' + optUrl(d.capa, 900) + '\');background-size:cover;background-position:center;"'
       : "";
     var coverClass = hasCover ? " has-cover" : "";
     return (
@@ -198,7 +220,7 @@
       var d = entry.data;
       document.title = (d.title || "QLTYSTNC") + " — QLTYSTNC";
       var coverHtml = d.capa
-        ? '<img src="' + d.capa + '" alt="" style="width:100%;border:1px solid var(--line);margin-bottom:32px;">'
+        ? imgTag(d.capa, d.title || "", "width:100%;border:1px solid var(--line);margin-bottom:32px;", true)
         : "";
       var subHtml = d.subtitulo
         ? '<p class="sub" style="color:var(--mute);font-size:16px;margin-bottom:24px;">' + d.subtitulo + "</p>"
@@ -307,7 +329,7 @@
     var d = entry.data;
     var hasCover = !!d.foto;
     var bgStyle = hasCover
-      ? ' style="background-image:url(\'' + d.foto + '\');background-size:cover;background-position:center;"'
+      ? ' style="background-image:url(\'' + optUrl(d.foto, 900) + '\');background-size:cover;background-position:center;"'
       : "";
     var coverClass = hasCover ? " has-cover" : "";
     var primaryLink = d.link_paypal || d.link_stripe;
