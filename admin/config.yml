@@ -58,6 +58,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - { label: "Rascunho (se ligado, NÃO aparece no site)", name: "rascunho", widget: "boolean", default: false, required: false }
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Tipo", name: "tipo", widget: "select", options: ["Evento", "Sessão", "Drift"] }
       - { label: "Data", name: "date", widget: "datetime" }
@@ -74,6 +75,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - { label: "Rascunho (se ligado, NÃO aparece no site)", name: "rascunho", widget: "boolean", default: false, required: false }
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Subtítulo / linha editorial", name: "subtitulo", widget: "string", required: false }
       - { label: "Data", name: "date", widget: "datetime" }
