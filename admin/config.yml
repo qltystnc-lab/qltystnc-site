@@ -80,3 +80,20 @@ collections:
       - { label: "Foto de capa", name: "capa", widget: "image" }
       - { label: "Texto completo", name: "body", widget: "markdown" }
       - { label: "Créditos (fotógrafo/piloto)", name: "creditos", widget: "string", required: false }
+
+  - name: "material"
+    label: "O Nosso Material"
+    label_singular: "Equipamento"
+    folder: "content/material"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{categoria}} — {{title}}"
+    fields:
+      - { label: "Nome do equipamento", name: "title", widget: "string" }
+      - { label: "Categoria", name: "categoria", widget: "select", options: ["Câmara", "Lentes", "Filtros", "Estabilização", "Impressão", "Edição", "Acessórios"] }
+      - { label: "Quem usa", name: "quem", widget: "select", options: ["Ricardo", "Saul", "Ambos"], default: "Ricardo" }
+      - { label: "Porque usamos (1–2 frases, numa só linha)", name: "descricao", widget: "string" }
+      - { label: "Foto (opcional)", name: "foto", widget: "image", required: false }
+      - { label: "Link de afiliado (Amazon, etc.)", name: "link", widget: "string", required: false, hint: "Cola aqui o link de afiliado. Se ficar vazio, aparece 'Link em breve'." }
+      - { label: "Nome da loja do link", name: "loja", widget: "string", required: false, default: "Amazon" }
+      - { label: "Ordem (1 aparece primeiro)", name: "ordem", widget: "number", value_type: "int", default: 10 }
