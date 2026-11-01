@@ -18,13 +18,22 @@
     var raw = m[1];
     var body = m[2];
     var data = {};
+    var lastKey = null;
     raw.split("\n").forEach(function (line) {
+      // continuation of a long value folded over several lines (YAML ">-", "|" or plain wrap)
+      if (lastKey && /^\s+\S/.test(line) && !/^\s*-\s/.test(line)) {
+        var cont = line.trim().replace(/^"(.*)"$/, "$1");
+        data[lastKey] = data[lastKey] ? data[lastKey] + " " + cont : cont;
+        return;
+      }
       var idx = line.indexOf(":");
       if (idx === -1) return;
       var key = line.slice(0, idx).trim();
       var val = line.slice(idx + 1).trim();
+      if (/^[>|][-+]?$/.test(val)) val = "";
       val = val.replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1");
       data[key] = val;
+      lastKey = key;
     });
     return { data: data, body: body.trim() };
   }
@@ -363,11 +372,60 @@
     });
   }
 
+  // ---------- O nosso material ----------
+  var MATERIAL_CATS = ["Câmara", "Lentes", "Filtros", "Estabilização", "Impressão", "Edição", "Acessórios"];
+
+  function esc(v) {
+    return String(v || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function gearCardHtml(entry) {
+    var d = entry.data;
+    var img = d.foto
+      ? '<div class="gear-img" style="background-image:url(\'' + optUrl(d.foto, 700) + '\');"></div>'
+      : "";
+    var btn = d.link
+      ? '<a href="' + esc(d.link) + '" target="_blank" rel="sponsored nofollow noopener" class="gear-btn">VER NA ' + esc((d.loja || "loja").toUpperCase()) + " →</a>"
+      : '<span class="gear-btn soon">LINK EM BREVE</span>';
+    return (
+      '<div class="gear-card">' + img +
+        '<div class="gear-body">' +
+          '<div class="gear-who mono">' + esc((d.quem || "").toUpperCase()) + "</div>" +
+          "<h3>" + esc(d.title) + "</h3>" +
+          "<p>" + esc(d.descricao) + "</p>" +
+          btn +
+        "</div>" +
+      "</div>"
+    );
+  }
+
+  function renderMaterial(containerId) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    getCollection("material").then(function (entries) {
+      if (!entries.length) {
+        el.innerHTML = '<p class="mono" style="color:var(--mute);font-size:13px;">Lista em preparação.</p>';
+        return;
+      }
+      var cats = MATERIAL_CATS.slice();
+      entries.forEach(function (e) { if (cats.indexOf(e.data.categoria) === -1) cats.push(e.data.categoria || "Outros"); });
+      el.innerHTML = cats.map(function (cat) {
+        var items = entries.filter(function (e) { return (e.data.categoria || "Outros") === cat; })
+          .sort(function (a, b) { return (parseInt(a.data.ordem, 10) || 99) - (parseInt(b.data.ordem, 10) || 99); });
+        if (!items.length) return "";
+        return '<div class="section-title mono">' + esc(cat) + '</div><div class="gear-grid">' + items.map(gearCardHtml).join("") + "</div>";
+      }).join("");
+    }).catch(function () {
+      el.innerHTML = '<p class="mono" style="color:var(--mute);font-size:13px;">Não foi possível carregar a lista. Tenta novamente daqui a pouco.</p>';
+    });
+  }
+
   window.QLTYSTNC = {
     renderGrid: renderGrid,
     renderMixedGrid: renderMixedGrid,
     renderPost: renderPost,
     renderCalendar: renderCalendar,
-    renderStore: renderStore
+    renderStore: renderStore,
+    renderMaterial: renderMaterial
   };
 })();
