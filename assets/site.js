@@ -141,6 +141,10 @@
         });
       }));
     }).then(function (entries) {
+      // entries marked as draft in the CMS never show on the site
+      // (add &preview=1 to a post link to see a draft before publishing it)
+      var showDrafts = /[?&]preview=1(&|$)/.test(location.search);
+      entries = entries.filter(function (e) { return showDrafts || String(e.data.rascunho) !== "true"; });
       entries.sort(function (a, b) {
         var da = new Date(a.data.date || 0).getTime();
         var db = new Date(b.data.date || 0).getTime();
