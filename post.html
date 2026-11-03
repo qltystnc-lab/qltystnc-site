@@ -3,68 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="/uploads/favicon-64x64.png">
 <link rel="apple-touch-icon" href="/uploads/apple-touch-icon.png">
 <title>QLTYSTNC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black:#0a0a0a; --panel:#141416; --line:#2b2b2e;
-    --off:#eeece6; --mute:#9a9994; --signal:#ff5a1f; --ok:#7a8f6e;
+    --black:#0a0a0a;--panel:#121214;--line:#26262a;--off:#eeece6;--mute:#8f8e89;
+    --signal:#ff5a1f;--ease:cubic-bezier(.16,1,.3,1);--gutter:clamp(16px,4vw,56px);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{background:var(--black);color:var(--off);font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.01em;font-weight:700;}
-  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;}
+  body{background:var(--black);color:var(--off);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  ::selection{background:var(--signal);color:#0a0a0a;}
+  h1,h2,h3{text-transform:uppercase;font-weight:700;letter-spacing:-.02em;}
+  .mono{letter-spacing:.14em;text-transform:uppercase;}
   a{color:inherit;text-decoration:none;}
-  img{display:block;max-width:100%;}
+  img{display:block;max-width:100%;height:auto;}
+  body::after{
+    content:'';position:fixed;inset:-50%;z-index:200;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  }
+  .revbar{position:fixed;top:0;left:0;height:2px;width:100%;z-index:120;background:linear-gradient(90deg,var(--signal),#ffb347);transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 12px var(--signal);}
 
-  .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(10,10,10,0.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
-  .nav .logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.04em;}
-  .nav .logo span{color:var(--signal);}
-  .back-link{font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;color:var(--mute);}
-  .back-link:hover{color:var(--off);}
+  .nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px var(--gutter);background:rgba(8,8,8,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  .logo{font-weight:700;font-size:20px;letter-spacing:.04em;display:flex;align-items:center;gap:10px;}
+  .logo span{color:var(--signal);text-shadow:0 0 18px rgba(255,90,31,.55);}
+  .logo .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px var(--signal);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .back-link{font-size:12px;letter-spacing:.14em;color:var(--mute);transition:color .2s;white-space:nowrap;}
+  .back-link:hover{color:var(--signal);}
+  .lang-toggle{display:flex;gap:2px;font-size:11px;letter-spacing:.08em;}
+  .lang-toggle button{background:transparent;border:1px solid rgba(238,236,230,.25);color:var(--mute);padding:6px 10px;cursor:pointer;font:inherit;letter-spacing:inherit;transition:all .2s;}
+  .lang-toggle button.active{background:var(--signal);border-color:var(--signal);color:#0a0a0a;font-weight:600;}
+  .lang-toggle button:not(.active):hover{color:var(--off);border-color:var(--off);}
+  @media(max-width:420px){.back-link .txt{display:none;}}
 
-  .eyebrow{font-size:11px;color:var(--signal);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-  .eyebrow::before{content:'';width:18px;height:1px;background:var(--signal);}
+  main{max-width:820px;margin:0 auto;padding:clamp(40px,7vw,88px) var(--gutter) clamp(72px,10vw,120px);transition:opacity .25s ease;}
+  main.switching{opacity:0;}
+  .eyebrow{font-size:11px;color:var(--signal);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:'';width:28px;height:1px;background:var(--signal);}
+  .post-title{font-size:clamp(32px,6.5vw,72px);line-height:.95;letter-spacing:-.035em;margin-bottom:18px;overflow-wrap:anywhere;}
+  .post-sub{color:#b9b7b1;font-size:clamp(15px,1.6vw,19px);line-height:1.5;margin-bottom:28px;max-width:640px;}
+  .lang-notice{font-size:11px;color:var(--mute);border:1px dashed var(--line);padding:10px 14px;margin-bottom:24px;}
+  .post-cover{margin:0 calc(var(--gutter) * -1) 40px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  @media(min-width:900px){.post-cover{margin:0 -60px 48px;border:1px solid var(--line);}}
 
-  main{max-width:760px;margin:0 auto;padding:56px 20px 100px;}
-  .article-body p{margin-bottom:20px;line-height:1.7;font-size:16px;color:#d8d6d0;}
-  .article-body blockquote{border-left:2px solid var(--signal);padding:4px 0 4px 20px;margin:28px 0;font-style:italic;color:var(--off);}
-  .article-body h3{font-size:20px;margin:32px 0 14px;}
-  .article-body ul{margin:0 0 20px 20px;color:#d8d6d0;}
-  .article-body li{margin-bottom:6px;line-height:1.6;}
+  .article-body p{margin-bottom:20px;line-height:1.75;font-size:clamp(16px,1.25vw,17.5px);color:#d8d6d0;}
+  .article-body p strong{color:var(--off);}
+  .article-body h3{font-size:clamp(20px,2.6vw,28px);margin:44px 0 16px;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;}
+  .article-body h3::before{content:'';width:18px;height:3px;background:var(--signal);flex:none;}
+  .article-body blockquote{border-left:3px solid var(--signal);padding:6px 0 6px 20px;margin:32px 0;font-size:clamp(17px,1.8vw,21px);line-height:1.5;color:var(--off);}
+  .article-body ul{margin:0 0 24px 0;list-style:none;color:#d8d6d0;}
+  .article-body li{padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative;line-height:1.5;}
+  .article-body li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:2px;background:var(--signal);}
+  .article-body img{width:100%;margin:28px 0 !important;border:1px solid var(--line) !important;}
+  @media(min-width:900px){.article-body img{width:calc(100% + 120px);max-width:none;margin:36px -60px !important;}}
+  .post-credits{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;line-height:1.6;}
 
-  footer{padding:48px 20px 32px;border-top:1px solid var(--line);}
-  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace;}
+  footer{padding:28px var(--gutter);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--mute);letter-spacing:.06em;}
 </style>
 </head>
 <body>
 
+<div class="revbar" id="revbar"></div>
+
 <nav class="nav">
-  <a href="index.html" class="logo">QLTY<span>STNC</span></a>
-  <a href="index.html" class="back-link">← VOLTAR</a>
+  <a href="index.html" class="logo"><i class="dot"></i><b>QLTY<span>STNC</span></b></a>
+  <div class="nav-right">
+    <a href="arquivo.html" class="back-link mono">← <span class="txt" data-pt="ARQUIVO" data-en="ARCHIVE">ARQUIVO</span></a>
+    <div class="lang-toggle">
+      <button id="btn-pt" class="active">PT</button>
+      <button id="btn-en">EN</button>
+    </div>
+  </div>
 </nav>
 
 <main id="post-root">
-  <p class="mono" style="color:var(--mute)">A carregar...</p>
+  <p class="mono" style="color:var(--mute);font-size:12px;">A carregar…</p>
 </main>
 
 <footer>
-  <div class="foot-bottom">
-    <span>© 2026 QLTYSTNC — RICARDO ROCHA</span>
-    <span>PORTO · PORTUGAL</span>
-  </div>
+  <span>© 2026 QLTYSTNC® — RICARDO ROCHA | SAUL SALGADO</span>
+  <span>PORTO · PORTUGAL</span>
 </footer>
 
 <script src="assets/site.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    window.QLTYSTNC.renderPost();
-  });
+  (function () {
+    var root = document.getElementById("post-root");
+    function setUi(lang) {
+      document.documentElement.setAttribute("lang", lang);
+      document.getElementById("btn-pt").classList.toggle("active", lang === "pt");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      document.querySelectorAll("[data-pt]").forEach(function (el) {
+        var t = el.getAttribute("data-" + lang);
+        if (t !== null) el.textContent = t;
+      });
+    }
+    function setLang(lang) {
+      try { localStorage.setItem("qltystnc-lang", lang); } catch (e) {}
+      setUi(lang);
+      root.classList.add("switching");
+      setTimeout(function () {
+        window.QLTYSTNC.renderPost(lang);
+        root.classList.remove("switching");
+      }, 200);
+    }
+    document.getElementById("btn-pt").addEventListener("click", function () { setLang("pt"); });
+    document.getElementById("btn-en").addEventListener("click", function () { setLang("en"); });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var lang = window.QLTYSTNC.getLang();
+      setUi(lang);
+      window.QLTYSTNC.renderPost(lang);
+    });
+
+    var rev = document.getElementById("revbar");
+    window.addEventListener("scroll", function () {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      rev.style.transform = "scaleX(" + (h > 0 ? window.scrollY / h : 0) + ")";
+    }, { passive: true });
+  })();
 </script>
 
 <!-- Cloudflare Web Analytics (gratuito) -->
