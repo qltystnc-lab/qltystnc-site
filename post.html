@@ -61,14 +61,21 @@
   .article-body ul{margin:0 0 24px 0;list-style:none;color:#d8d6d0;}
   .article-body li{padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative;line-height:1.5;}
   .article-body li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:2px;background:var(--signal);}
-  .article-body img{width:100%;margin:28px 0 !important;border:1px solid var(--line) !important;}
-  @media(min-width:900px){.article-body img{width:calc(100% + 120px);max-width:none;margin:36px -60px !important;}}
-  .article-body img.portrait{width:auto !important;max-width:100%;max-height:85vh;margin:28px auto !important;}
-  @media(min-width:900px){.article-body img.portrait{margin:36px auto !important;}}
-  .article-body .img-row{display:flex;gap:10px;margin:28px 0;align-items:flex-start;}
-  .article-body .img-row img{margin:0 !important;height:auto;max-height:none;}
-  .article-body .img-row img.portrait{width:100% !important;max-height:none;margin:0 !important;}
-  @media(max-width:600px){.article-body .img-row{flex-direction:column;}.article-body .img-row img{flex:none !important;}.article-body .img-row img.portrait{width:auto !important;max-width:100%;max-height:80vh;margin:0 auto !important;}}
+  /* photos: on phones they fill the text column; on computers every photo (single or pair)
+     breaks out 60px each side, same width as the cover, so everything lines up */
+  .article-body > img{display:block;width:100% !important;height:auto;margin:32px 0 !important;border:1px solid var(--line) !important;}
+  .article-body > img.portrait{width:auto !important;max-width:100%;max-height:85vh;margin:32px auto !important;}
+  .article-body .img-row{display:flex;gap:10px;margin:32px 0;align-items:flex-start;}
+  .article-body .img-row img{display:block;min-width:0;height:auto;margin:0 !important;border:1px solid var(--line) !important;}
+  @media(min-width:900px){
+    .article-body > img:not(.portrait),.article-body > .img-row{width:calc(100% + 120px) !important;max-width:none;margin:44px -60px !important;}
+    .article-body > img.portrait{margin:44px auto !important;}
+  }
+  @media(max-width:600px){
+    .article-body .img-row{flex-direction:column;}
+    .article-body .img-row img{flex:none !important;width:100% !important;}
+    .article-body .img-row img.portrait{width:auto !important;max-width:100%;max-height:80vh;margin:0 auto !important;}
+  }
   .post-credits{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;line-height:1.6;}
 
   footer{padding:28px var(--gutter);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--mute);letter-spacing:.06em;}
