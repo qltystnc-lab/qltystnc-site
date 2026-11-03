@@ -43,11 +43,6 @@ body_en: |-
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
-  **VW Beetle — @chowa_vw**
-  Carocha or Fusca, depending on which side of the Atlantic you're on. Living proof that stance has no age.
-
-  And many more: @the.bluish's Mégane IV, @low_rocco_mk3's Golf Mk3 and dozens of other builds you'll find in the gallery.
-
   ## What people said
 
   The community spoke and the verdict was unanimous. Among photographers, exhibitors and owners, the phrase heard most was simple: it exceeded expectations.
@@ -96,11 +91,6 @@ O Golf IV é daqueles carros que toda a gente já teve ou quis ter. Este, com ja
 
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
-
-**VW Carocha — @chowa_vw**
-Carocha ou Fusca, conforme o lado do Atlântico. Prova viva de que o stance não tem idade.
-
-E muitos mais: o Mégane IV de @the.bluish, o Golf Mk3 de @low_rocco_mk3 e dezenas de outros projetos que vais encontrar na galeria.
 
 ## Os relatos
 
