@@ -82,7 +82,8 @@
   function imgTag(src, alt, style, eager) {
     var opt = optUrl(src, 1600);
     var attrs = ' alt="' + (alt || "") + '" style="' + style + '"' +
-      (eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"';
+      (eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"' +
+      ' onload="if(this.naturalHeight>this.naturalWidth)this.classList.add(\'portrait\')"';
     if (opt === src) return '<img src="' + src + '"' + attrs + '>';
     var srcset = [800, 1200, 1600, 2400].map(function (w) { return optUrl(src, w) + " " + w + "w"; }).join(", ");
     return '<img src="' + opt + '" srcset="' + srcset + '" sizes="(max-width: 760px) 100vw, 760px"' + attrs +
