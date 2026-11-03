@@ -43,9 +43,6 @@ body_en: |-
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
-  **VW Golf Mk2 — @tiagosilva_mk2bagged**
-  Air suspension, boxy lines and that 80s charm that never gets old.
-
   **VW Beetle — @chowa_vw**
   Carocha or Fusca, depending on which side of the Atlantic you're on. Living proof that stance has no age.
 
@@ -99,9 +96,6 @@ O Golf IV é daqueles carros que toda a gente já teve ou quis ter. Este, com ja
 
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
-
-**VW Golf Mk2 — @tiagosilva_mk2bagged**
-Suspensão a ar, linhas quadradas e aquele charme dos anos 80 que não envelhece.
 
 **VW Carocha — @chowa_vw**
 Carocha ou Fusca, conforme o lado do Atlântico. Prova viva de que o stance não tem idade.
