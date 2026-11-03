@@ -5,6 +5,63 @@ subtitulo: PRIMEIRA EDIÇÃO EM ARCOS DE VALDEVEZ. DEZENAS DE CARROS BAIXOS E UM
 date: 2026-09-13T12:00:00.000+01:00
 capa: ""
 creditos: QLTYSTNC - Ricardo Rocha || Saul Salgado
+title_en: "DOWNFEST 2026 — THE FIRST OF MANY"
+subtitulo_en: "FIRST EDITION IN ARCOS DE VALDEVEZ. DOZENS OF LOW CARS AND A MINHO REGION THAT PROVED TO BE STANCE COUNTRY"
+body_en: |-
+  Some events are born out of habit. DownFest was born with a motto — BUILT DIFFERENT — and, judging by what we saw in Arcos de Valdevez, it wasn't just talk.
+
+  On 12 and 13 September, the Arcos de Valdevez Exhibition Centre hosted the event's first edition. Less than a month before opening, the organisers already had more than 100 confirmed builds. On the weekend, people turned up from all over: from across the country and even from Spain.
+
+  We were there, camera in hand, like the old days.
+
+  ## A venue that fits
+
+  The space did half the work. An industrial-style hall, with the green hills of Alto Minho just outside, split into two areas: inside, where the most detailed builds lined up, and outside, where the hangouts, wheels tucked to the limit and cars rolling in and out did the rest.
+
+  Inside, hall lights hitting polished paint and wheels that take hours to choose. Outside, the more relaxed side of the culture: people leaning on cars, talking offsets and that eternal question — "does it actually drive like that on the road?".
+
+  And one detail stood out right at the entrance: how the cars were arranged. Instead of the usual long, identical rows, the organisers mixed up the layouts across the hall and placed very different concepts side by side. The result was a walk-through that never tires the eye — every corner had a new composition — and, for anyone with a camera, that makes all the difference: cleaner angles, more space around each car and fewer repeated backgrounds.
+
+  ## More than cars
+
+  DownFest didn't stop at the display. On Saturday, @b5oliveira painted a live graffiti piece for the event, and @abreusk8school put on a skate demo with open lessons for kids and adults. Small touches that turn a car show into a family day out.
+
+  Among the stands were brands that live this culture every day: Race Heroes, MM Auto, Flimp Auto, Eurocar Detail, PisoPro and DRM Suspensions. There was even room for tattoos, with @inestattooartist_.
+
+  ## The builds
+
+  Variety was the name of the game. Classic to modern, air to coils — a bit of everything rolled through the hall.
+
+  **BMW 3 Series Touring (F31) — @f31_yeelow**
+  A family estate that has very little family left in it. Impossible-to-ignore yellow, sitting on the floor and with a presence that stopped people in their tracks. One of the most-liked photos on our socials.
+
+  **VW Golf IV — @originalgolfiv_ricky**
+  The Golf IV is one of those cars everyone has owned or wanted to. This one, on OZ wheels with fitment spot on, is a reminder of why the fourth generation is still a go-to base.
+
+  **VW Golf Mk2 — @tiagosilva_mk2bagged**
+  Air suspension, boxy lines and that 80s charm that never gets old.
+
+  **VW Beetle — @chowa_vw**
+  Carocha or Fusca, depending on which side of the Atlantic you're on. Living proof that stance has no age.
+
+  **Audi A3 — built by Eurocar Detail**
+  The Barcelos crew prepared it especially for the event: a well-thought-out spec, carefully chosen wheels and that final shine only proper detailing can give.
+
+  And many more: @the.bluish's Mégane IV, @low_rocco_mk3's Golf Mk3 and dozens of other builds you'll find in the gallery.
+
+  ## What people said
+
+  The community spoke and the verdict was unanimous. Among photographers, exhibitors and owners, the phrase heard most was simple: it exceeded expectations.
+
+  > "Downfest, first edition. Remember the name." — @351clicks
+
+  For a debut, the organisers nailed the essentials: a good venue, a strong selection of cars and an atmosphere where everyone felt at home. The spirit carried on, too: weeks later, the DownFest crew headed to Potes-SEE, in the Picos de Europa.
+
+  ## Same again next year?
+
+  We hope so. If a second edition goes ahead, it's already in our calendar.
+
+  Were you there and found your car in the gallery? Get in touch on WhatsApp or by email — we'll send you the photos in high resolution.
 ---
 Há eventos que nascem por hábito. O DownFest nasceu com uma frase como lema — BUILT DIFFERENT — e, a julgar pelo que se viu em Arcos de Valdevez, não foi só conversa.
 

@@ -4,6 +4,100 @@ subtitulo: EVENTO
 date: 2026-08-01T14:00:00.000+01:00
 capa: /uploads/dsc07367.jpg
 creditos: ""
+title_en: "Summer On Stance V10 - LAST EDITION"
+subtitulo_en: "EVENT"
+body_en: |-
+  # Summer On Stance V10 – Last Dance
+
+  **1–2 August 2026 — QLTYSTNC**
+
+  ![](/uploads/dsc07480.jpg)
+
+  Some events leave a mark. For a decade, Summer On Stance was one of them. The tenth edition, "Last Dance", marked the end of one of the most iconic gatherings of stance culture in Portugal — one last weekend that brought together some of the best national and international builds, hundreds of cars and a community as strong as ever.
+
+  More than a farewell, this edition was a celebration of everything that made Summer On Stance a benchmark: quality, a passion for detail and an atmosphere that, year after year, made this event a must for anyone who lives car culture.
+
+  For QLTYSTNC, this weekend had a special meaning — it was our official return to events, after a drift round a few weeks earlier rekindled the urge to do this properly again.
+
+  ## The comeback
+
+  ![](/uploads/f16925696.jpg)
+
+  The last few years brought other priorities and, without really noticing, we drifted further away from the events that had been part of our routine for so long.
+
+  But the passion never went away.
+
+  A few weeks ago we went back to car photography at a drift event, and one day was enough to realise the drive was exactly where it had always been. When the chance came up to be at Summer On Stance V10, there wasn't much to think about.
+
+  It was the right moment to come back.
+
+  ## An event that still makes a difference
+
+  ![](/uploads/dsc07362.jpg)
+
+  Walking into the venue, it quickly became clear why Summer On Stance earned such a special place among enthusiasts.
+
+  The quality of the builds is still impressive. From classics to the latest models, from subtle builds to the boldest creations, there was room for practically every style. Every car showed hours of dedication, attention to detail and passion for what this culture stands for.
+
+  ![](/uploads/f15766272.jpg)
+
+  But the real highlight is still the atmosphere.
+
+  Summer On Stance was never just a car show. It's a meeting point where old friends reunite, new friendships begin and hours go by talking about mechanics, mods, photography and everything that brings this community together.
+
+  That atmosphere is exactly what made the difference once again in this final edition.
+
+  ## Telling stories through the lens
+
+  ![](/uploads/f14704128.jpg)
+
+  Walking the venue again with a camera in hand was a reminder of why car photography is still so special.
+
+  Every build offers a new perspective. There's always a hidden detail, an unexpected reflection or a different composition waiting to be found.
+
+  More than photographing cars, it's about capturing moments, preserving details and telling stories through images. And that feeling was there all weekend long.
+
+  ## A space for the legends
+
+  ![](/uploads/f9868800.jpg)
+
+  One of the big new features this year was an area dedicated to the legends of Summer On Stance.
+
+  A space created to honour some of the builds and owners who followed almost the entire history of the event and helped shape what Summer On Stance stands for today.
+
+  It was one of the busiest spots at the venue and a great way to recognise those who, over the years, helped raise the bar for stance culture in Portugal.
+
+  ## Reunions that stay with you
+
+  ![](/uploads/dsc07512.jpg)
+
+  The cars were the reason to be there. The people ended up being one of the best parts of the weekend.
+
+  We ran into friends we hadn't seen in years and realised some conversations simply pick up where they left off.
+
+  There was also an unexpected surprise. Several people recognised the **QLTYSTNC** name, despite the time away. Knowing that the work we did in the past is still remembered by people who follow this community only makes us want to keep going.
+
+  Moments like these remind you that this culture goes far beyond the cars.
+
+  ## A farewell... and a new beginning
+
+  Over ten editions, Summer On Stance became much more than a car event. It became a meeting point for a community that grew up together, inspired new builds and helped raise stance culture in Portugal.
+
+  If this really was the last edition, it could hardly have ended any better. The venue was packed again, the quality stayed at the highest level and the atmosphere did justice to the legacy built over the years.
+
+  For **QLTYSTNC**, this wasn't the end.
+
+  It was a new beginning.
+
+  The calendar is already taking shape, there are new events on the horizon and the will to keep documenting this culture is stronger than ever.
+
+  Summer On Stance comes to an end — maybe there's news on the way...
+
+  The passion for this culture lives on.
+
+  And **QLTYSTNC** will be there to tell the story.
+
+  **Photos & Text: QLTYSTNC**
 ---
 # Summer On Stance V10 – Last Dance
 
