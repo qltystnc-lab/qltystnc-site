@@ -1,29 +1,29 @@
 ---
 rascunho: true
-title: Mercedes W203 — João Pedro Silva
-subtitulo: Da praça de táxis para os palcos do stance, com mais de um milhão de quilómetros
+title: Mercedes W203 — Diretamente do Passado
+subtitulo: O W203 do João Pedro Silva — da praça de táxis para os palcos do stance, com mais de um milhão de quilómetros
 tipo: Sessão
 date: 2018-07-26T12:00:00.000+01:00
 capa: /uploads/sessao-2018-mercedes-w203-joao-capa.jpg
 creditos: "Fotografia: QLTYSTNC · Sessão Droppt · Carro: João Pedro Silva"
-title_en: "Mercedes W203 — João Pedro Silva"
-subtitulo_en: "From the taxi rank to the stance stage, with over a million kilometres"
+title_en: "Mercedes W203 — Straight from the Past"
+subtitulo_en: "João Pedro Silva's W203 — from the taxi rank to the stance stage, with over a million kilometres"
 body_en: |-
   Some cars are born for the show. This one was born for work — and only found the spotlight after a lifetime on the road.
 
-  This Mercedes W203 spent years at a taxi rank. It passed from father to son with **1,260,000 km** on the clock and, in João's hands, got a second life that has nothing to do with the first.
+  This Mercedes W203 spent years at a taxi rank. It passed from father to son with **1,260,000 km** and, in João's hands, got a second life.
 
   ## A C-Class that broke with the past
 
-  The second-generation C-Class came to change the way people saw Mercedes. It inherited most of its engines from its predecessor, but the lines were new: more comfortable, more classic and, above all, younger. For those who felt the brand needed to modernise, the W203 was the answer.
+  The second-generation C-Class came to change the way people saw Mercedes. It inherited most of its engines from its predecessor, but brought new lines, more comfort and a younger image. For those who felt the brand needed to modernise, the W203 was the answer.
 
   What nobody expected was to see one, with more than a million kilometres behind it, sitting this low.
 
-  ## "Are you crazy?"
+  ## Dad's reaction
 
   We asked João how his father reacted when he decided to start modifying the car. He told us exactly what happened:
 
-  > "Are you crazy? The car is so good like this, it's always been like this and now you're going to mess with it?"
+  > "The car is so good like this, it's always been like this, and now you're going to mess with it?"
 
   The tone changed when the first wheels arrived — still a set of 3SDMs:
 
@@ -71,19 +71,19 @@ body_en: |-
 ---
 Há carros que nascem para o palco. Este nasceu para trabalhar — e só depois de uma vida inteira na estrada é que descobriu os holofotes.
 
-Este Mercedes W203 passou anos numa praça de táxis. Foi de pai para filho com **1.260.000 km** no conta-quilómetros e, nas mãos do João, ganhou uma segunda vida que nada tem a ver com a primeira.
+Este Mercedes W203 passou anos numa praça de táxis. Foi de pai para filho com **1.260.000 km** e, nas mãos do João, ganhou uma segunda vida.
 
 ## Um Classe C que rompeu com o passado
 
-A segunda geração do Classe C veio mudar a forma como se olhava para a Mercedes. Herdou a maioria dos motores do antecessor, mas as linhas eram novas: mais confortáveis, mais clássicas e, sobretudo, mais jovens. Para quem achava que a marca precisava de se modernizar, o W203 foi a resposta.
+A segunda geração do Classe C veio mudar a forma como se olhava para a Mercedes. Herdou a maioria dos motores do antecessor, mas trouxe linhas novas, mais conforto e uma imagem mais jovem. Para quem achava que a marca precisava de se modernizar, o W203 foi a resposta.
 
 O que ninguém esperava era ver um, com mais de um milhão de quilómetros às costas, tão perto do chão.
 
-## "Estás parvo?"
+## A reação do pai
 
 Perguntámos ao João como reagiu o pai quando ele decidiu começar a mexer no carro. Contou-nos exatamente o que aconteceu:
 
-> "Estás parvo? O carro está tão bom assim, sempre foi assim e agora vais mexer nele?"
+> "O carro está tão bom assim, sempre foi assim, e agora vais mexer nele?"
 
 O tom mudou quando chegaram as primeiras rodas — ainda um jogo de 3SDM:
 
