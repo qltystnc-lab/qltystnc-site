@@ -106,6 +106,15 @@
     var html = blocks.map(function (block) {
       block = block.trim();
       if (!block) return "";
+      // two or more images on consecutive lines: show them side by side (same height)
+      var lines = block.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+      if (lines.length > 1 && lines.every(function (l) { return /^!\[[^\]]*\]\([^)]+\)$/.test(l); })) {
+        return '<div class="img-row">' + lines.map(function (l) {
+          var m = l.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+          return imgTag(m[2], m[1], "flex:1;min-width:0;width:100%;", false)
+            .replace('onload="', 'onload="this.style.flex=this.naturalWidth/this.naturalHeight;');
+        }).join("") + "</div>";
+      }
       // standalone image: ![alt](src)
       var imgOnly = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
       if (imgOnly) {
