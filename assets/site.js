@@ -8,7 +8,8 @@
   var BRANCH = "main";
 
   var TREE_URL = "https://api.github.com/repos/" + REPO_OWNER + "/" + REPO_NAME + "/git/trees/" + BRANCH + "?recursive=1";
-  var RAW_BASE = "https://cdn.jsdelivr.net/gh/" + REPO_OWNER + "/" + REPO_NAME + "@" + BRANCH + "/";
+  // raw.githubusercontent.com updates within ~5 minutes of a change (no more manual jsDelivr cache purges)
+  var RAW_BASE = "https://raw.githubusercontent.com/" + REPO_OWNER + "/" + REPO_NAME + "/" + BRANCH + "/";
 
   // ---------- frontmatter + markdown ----------
 
