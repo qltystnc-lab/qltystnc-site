@@ -4,6 +4,76 @@ subtitulo: Uma sessão improvisada, cheia de memórias e histórias de estrada
 date: 2020-08-09T17:00:00.000+01:00
 capa: /uploads/148426798_3072421259710682_841562245574945894_n.jpg
 creditos: "Fotografia: QLTYSTNC · Carro: Vítor Santos - @vs_polo_steilheck"
+title_en: "Vítor Santos — A Throne on Wheels"
+subtitulo_en: "An improvised session, full of memories and road stories"
+body_en: |-
+  Counting down the days until the end of the holidays, we found time to see and hear a story full of memories and adventures. With no real preparation or plan, we took photos and got to know the man behind the machine a little better.
+
+  Between photos, good company and plenty of stories, we tried to understand what makes Vítor Santos's "little" VW Polo Steilheck 86C such a unique build.
+
+  Bold and simple are probably the best words to describe this "bread van". A boxy body that holds every memory and adventure from Vítor's first day with it until today.
+
+  The smell of petrol mixed with the aggressive sound of the twin Weber carburettors, fitted to the small but lively 1.0 engine, sharpens every sense and takes us straight back to the crazy 80s.
+
+  ![](/uploads/148354739_3072421243044017_2644298865154674180_n.jpg)
+
+  Stories and mods that Vítor tells with a smile that goes beyond his mouth — you can see it in his eyes. Used to racking up kilometres across Germany, this Polo is the purest definition of a "daily driver", with as many adventures as kilometres covered.
+
+  A car that makes you wonder how it's possible to go so far with "so little".
+
+  > "You're driving down the road, an old man honks and gives you a thumbs up... you look at him, he doesn't know you at all and you thank him... that's what matters... the trophies? They're gathering dust at home." — Vítor Santos, Ícones YouTube channel
+
+  ![](/uploads/148431443_3072421213044020_2243341839596279404_n.jpg)
+
+  According to Vítor, 2018 was a year of rediscovery and showings. Vítor went to events all over Europe, proving that the "small ones" easily fit in among the "big ones" when it comes to standing out.
+
+  The event tour started at VW Days (France), where Vítor was called on stage with the Polo to tell the story behind all the adventures and mods done so far. Next stop? Belgium, at Retroworks and VW Village, then the Netherlands at MIVW, finishing in the brand's homeland, Germany, at Polo Treffen and Vau-Max.
+
+  But it seems that in 2018 Vítor decided one Polo wasn't enough — and bought another, challenging himself to go further in this new chapter.
+
+  ![](/uploads/148264278_3072421196377355_3124716003020443348_n.jpg)
+
+  And the Polo that brings us to this article? With a long list of changes, Vítor didn't stop at looks. In 2019, he refreshed this "bread van" with air suspension and Airlift 3P management, which, in his own words, turned out to be the right call.
+
+  Testing at home isn't Vítor's thing — for him, there's no better test than the road. He drove 3,800 kilometres from Portugal to Germany, where he lives, passing through Denmark and France. With a 4-speed gearbox and zero problems along the way.
+
+  In 2019, the news that he was going to be a father again put the little Polo's mods on hold for a while. But in 2020, more organised and with a bigger family, he came back with the Polo and all its adventures.
+
+  As with any build, every part had to be in harmony, and Vítor felt the little Polo was missing something — that's where the current 15-inch BBS RS wheels came in.
+
+  A touch that, in our opinion, is a must.
+
+  Wanting to give it a more retro look, he removed all the stickers and other references to his country (except the number plate), keeping only the side vinyl.
+
+  ![](/uploads/148186517_3072421226377352_3260953091576797293_n.jpg)
+
+  Comparing photos from the start with how it looks today, it's clear a lot has been done. Some changes go unnoticed by the less observant — from the smallest details only a "trained eye" picks up, like the traditional plastic bumpers, to the boldest changes, like the air suspension or the Recaro interior. We all agree this Polo has come a long way, and it doesn't look like stopping here.
+
+  **Now, shall we pop the bonnet?**
+
+  ![](/uploads/148740428_3072421219710686_555683070166180320_n.jpg)
+
+  - 1.0 engine, 33 kW (code AAK)
+  - Twin Weber carburettors
+  - Original 4-speed gearbox
+  - Stainless steel exhaust and manifolds
+  - Stainless steel water radiator, expansion tank deleted
+
+  ![](/uploads/148573136_3072421216377353_1220692460604350601_n.jpg)
+
+  The engine was rebuilt from scratch and, once again to be different, Vítor kept the small 1.0 instead of the bold 1.3 turbo he had planned before. In a "world" where he saw others switching to the 1.3, he wanted to stay as true as possible to the car's history and keep it original.
+
+  It was a hard session to schedule given what was going on in the world at the time, but even among bad things, good things can happen — Vítor had to extend his stay in Portugal, giving us time to do the shoot to the standard we expect of ourselves.
+
+  ![](/uploads/148041470_3072421199710688_5325271159333517275_n.jpg)
+
+  We know the difference is in the small details, and our commitment is to capture them.
+
+  ![](/uploads/148381792_3072421276377347_8970175341382625237_n.jpg)
+
+  The interior was another good call, with an eye for detail. Even though it's simple, with no wild adventures or excess, this interior stands out for its quality. With almost every part changed to brown (a colour that was first questioned in terms of how it would suit the car), mostly sourced in Germany, the end result proves once again to be the right choice.
+
+  We know the story doesn't end here, and our lenses will most likely cross paths with this build again. And who knows, that day the surprises may come in a different form, as we try to capture moments still to be shared from this build that, small as it is, is full of "spirit".
 ---
 A contar os dias que faltavam para o fim das férias, arranjámos tempo para ver e ouvir uma história cheia de memórias e aventuras. Sem grande preparação ou plano, tirámos fotografias e conhecemos um pouco melhor o homem por trás da máquina.
 

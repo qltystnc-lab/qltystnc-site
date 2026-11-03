@@ -3,6 +3,74 @@ title: BMW E36 — Bryan Valério
 subtitulo: Um carro de família, herdado do pai, e a paixão que foi crescendo
 date: 2019-07-07T16:00:00.000+01:00
 capa: /uploads/149327019_3073336636285811_6292150103682842131_n.jpg
+title_en: "BMW E36 — Bryan Valério"
+subtitulo_en: "A family car, inherited from his father, and a passion that kept growing"
+body_en: |-
+  BMW's challenge was to create a car that could follow the highly regarded E30. Work on the project started early, and the results from Bavarian Motor Works couldn't have been more spot on.
+
+  *"The E36 is probably the car nobody thinks they like, but everyone ends up needing to own."*
+
+  ![](/uploads/149258124_3073336589619149_4339435643072257412_n.jpg)
+
+  Despite a split reception among fans of the brand at first, the E36 was a car suited to everyday life, with a radically redesigned front end but substantially more weight (around 200 kg more). Even so, BMW took care to offset that extra weight with more power, keeping the kg/hp ratio on par with the E30.
+
+  The extra weight came mainly from a bigger chassis and better sound insulation using newer, better materials. But there was also a clear goal of building a chassis that could take a proper M engine and behave like a true M(onster) on the road — so the wheelbase was lengthened, spreading the weight better and improving handling and agility.
+
+  The chemistry of this car was so well worked out that, to this day, it's still one of the most used and wanted cars among drift fans.
+
+  Maybe that's exactly why it earned the name "The Ultimate Driving Machine".
+
+  ![](/uploads/148932047_3073336899619118_7638349671491743833_n.jpg)
+
+  One of the greatest pleasures of the car world is the time spent together and the friendships it creates.
+
+  We first saw Bryan's E36 in person at Droppt 1.0, and ever since that event we were curious to get to know it better — especially all the details — and shoot the build on its own.
+
+  ![](/uploads/149391005_3073336852952456_9171255860529179464_n.jpg)
+
+  In 2019, Bryan's E36 was missing from most events and, despite a new set of wheels, he chose to keep it out of the public eye for a while. But the invitation was already out there — all it took was a chat and the right timing for everything to fall into place.
+
+  When we arrived, we found a quiet street with little traffic, not far from the town centre — a fishing area kept busy by the work done there. Bryan's purple (Techno Violet) E36 stood out on the street; we didn't even need to ask for the house number.
+
+  ![](/uploads/148674485_3073336679619140_3625565863417548688_n.jpg)
+
+  The relationship between the E36 and Bryan goes back years — its first owner was Bryan's father. In 1996, his father bought the E36 in France, and Bryan started working on the car early on: small mods at first, which grew until he started buying wheels for it — with the small detail that he wasn't even the owner yet.
+
+  *"Growing up with your dream car in the garage is an indescribable feeling."*
+
+  At the time, BMW was moving the E36 from phase 1 to phase 2, and this car is one of those transition-period examples.
+
+  One of the people to "blame" for Bryan's love of cars is his own father, a lifelong fan of the brand who, besides this model, has also owned others such as the E21.
+
+  At 18, it was time to take over the car he had watched grow up in the family since he was little. His name went on the registration and the mods got more serious: from the beige M interior it came with from the factory, to E46 330i brakes up front and E46 320d 150 hp at the rear. It now also has an M-Tech 3 steering wheel and a full 325i exhaust, which made itself heard every time we left a roundabout heading for the roads to do the rolling shots.
+
+  At just 18, Bryan already had the E36 looking like this.
+
+  Along the way, Bryan decided to change the colour — originally Madeiraschwarz — to Techno Violet, taking advantage of the fact that both are listed as "purple" on the registration.
+
+  ![](/uploads/148598854_3073336752952466_5395612289704381067_n.jpg)
+
+  A fan of the static style, the E36 runs coilovers and 17" AC Schnitzer wheels, no spoiler, and fog lights to switch up the look. In Bryan's eyes, the car is practically finished, but...
+
+  *"Is there a particular reason you run coils?"*
+
+  *"I run coils because I like adjusting the height and going everywhere like this — there's always that 'will it clear?' or 'will it make it?', but that just makes it more fun. As for bags, personally they're not my thing, I don't like how they make the car look."*
+
+  ![](/uploads/148564130_3073336796285795_773744780959973133_n.jpg)
+
+  *"Would you change anything about your build?"*
+
+  *"Would I change anything? Yes, the mechanical side — even though it's already a 318is, that's what I miss most, it's the upgrade still to do. Other than that, it's exactly how I pictured it."*
+
+  Bryan also reminded us that it wasn't all smooth sailing: about two years ago, the car had to go through a type B inspection, and he relied on friends to sort it out, since he had to temporarily remove the suspension, the brakes and the whole M Pack because they weren't on the car's records.
+
+  ![](/uploads/148729989_3073336709619137_1685537994559048428_n.jpg)
+
+  Luckily that didn't put him off, and he put his beautiful E36 back together.
+
+  ![](/uploads/148617405_3073336939619114_3837765310329191680_n.jpg)
+
+  Bryan, we'll definitely see each other soon — after all, friendship makes distances shorter.
 ---
 A BMW tinha como desafio criar um carro que sucedesse o bem conceituado E30. O projeto começou a ser estudado desde cedo, e os resultados do grupo Bavarian Motor Works não podiam ter sido mais acertados.
 
