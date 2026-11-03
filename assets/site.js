@@ -269,7 +269,7 @@
     return diff;
   }
 
-  function eventRowHtml(entry, isNext) {
+  function eventRowHtml(entry, isNext, isPast) {
     var d = entry.data;
     var isPT = (d.pais || "Portugal") === "Portugal";
     var countryColor = isPT ? "var(--signal)" : "var(--sea)";
@@ -290,7 +290,7 @@
         '<div class="ev-top">' +
           '<span class="ev-country-dot" style="background:' + countryColor + ';"></span>' +
           '<span class="mono" style="font-size:10px;color:var(--mute);">' + (d.tipo || "").toUpperCase() + "</span>" +
-          (wereGoing ? '<span class="mono ev-badge">QLTYSTNC LÁ</span>' : "") +
+          (wereGoing ? '<span class="mono ev-badge">' + (isPast ? "ESTIVEMOS LÁ" : "VAMOS ESTAR LÁ") + "</span>" : "") +
         "</div>" +
         "<h3>" + (d.title || "") + "</h3>" +
         '<div class="meta">' + (d.localizacao || "").toUpperCase() + (!isPT ? " · " + (d.pais_nome ? d.pais_nome.toUpperCase() : "ESTRANGEIRO") : "") + "</div>" +
@@ -331,7 +331,7 @@
 
       if (pastEl) {
         pastEl.innerHTML = past.length
-          ? past.map(function (e) { return eventRowHtml(e, false); }).join("")
+          ? past.map(function (e) { return eventRowHtml(e, false, true); }).join("")
           : '<p class="mono" style="color:var(--mute);font-size:13px;">Sem eventos passados registados.</p>';
         pastEl.style.opacity = "0.55";
       }
