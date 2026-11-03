@@ -35,6 +35,8 @@ body_en: |-
   **BMW 3 Series Touring (F31) — @f31_yeelow**
   A family estate that has very little family left in it. Impossible-to-ignore yellow, sitting on the floor and with a presence that stopped people in their tracks. One of the most-liked photos on our socials.
 
+  ![BMW 3 Series Touring (F31) — @f31_yeelow](/uploads/downfest-2026-bmw-f31-yeelow.jpg)
+
   **VW Golf IV — @originalgolfiv_ricky**
   The Golf IV is one of those cars everyone has owned or wanted to. This one, on OZ wheels with fitment spot on, is a reminder of why the fourth generation is still a go-to base.
 
@@ -93,6 +95,8 @@ Variedade foi a palavra de ordem. Do clássico ao moderno, do ar à mola, passou
 
 **BMW Série 3 Touring (F31) — @f31_yeelow**
 Uma carrinha familiar que de familiar já tem pouco. Amarelo impossível de ignorar, altura colada ao chão e uma presença que fez parar quem passava. Foi das fotos que mais gostaram nas nossas redes.
+
+![BMW Série 3 Touring (F31) — @f31_yeelow](/uploads/downfest-2026-bmw-f31-yeelow.jpg)
 
 **VW Golf IV — @originalgolfiv_ricky**
 O Golf IV é daqueles carros que toda a gente já teve ou quis ter. Este, com jantes OZ e um fitment no sítio, lembra porque é que a quarta geração continua a ser uma base de eleição.
