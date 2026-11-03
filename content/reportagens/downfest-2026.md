@@ -3,7 +3,7 @@ rascunho: true
 title: DOWNFEST 2026 — A PRIMEIRA DE MUITAS
 subtitulo: PRIMEIRA EDIÇÃO EM ARCOS DE VALDEVEZ. DEZENAS DE CARROS BAIXOS E UM MINHO QUE PROVOU SER TERRA DE STANCE
 date: 2026-09-13T12:00:00.000+01:00
-capa: ""
+capa: /uploads/downfest-2026-audi-s3-brardo.jpg
 creditos: QLTYSTNC - Ricardo Rocha || Saul Salgado
 title_en: "DOWNFEST 2026 — THE FIRST OF MANY"
 subtitulo_en: "FIRST EDITION IN ARCOS DE VALDEVEZ. DOZENS OF LOW CARS AND A MINHO REGION THAT PROVED TO BE STANCE COUNTRY"
@@ -37,6 +37,10 @@ body_en: |-
 
   **VW Golf IV — @originalgolfiv_ricky**
   The Golf IV is one of those cars everyone has owned or wanted to. This one, on OZ wheels with fitment spot on, is a reminder of why the fourth generation is still a go-to base.
+
+  ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
+
+  ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
   **VW Golf Mk2 — @tiagosilva_mk2bagged**
   Air suspension, boxy lines and that 80s charm that never gets old.
@@ -92,6 +96,10 @@ Uma carrinha familiar que de familiar já tem pouco. Amarelo impossível de igno
 
 **VW Golf IV — @originalgolfiv_ricky**
 O Golf IV é daqueles carros que toda a gente já teve ou quis ter. Este, com jantes OZ e um fitment no sítio, lembra porque é que a quarta geração continua a ser uma base de eleição.
+
+![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
+
+![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
 **VW Golf Mk2 — @tiagosilva_mk2bagged**
 Suspensão a ar, linhas quadradas e aquele charme dos anos 80 que não envelhece.
