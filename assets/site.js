@@ -12,30 +12,63 @@
 
   // ---------- frontmatter + markdown ----------
 
+  function unquote(v) {
+    var dq = v.match(/^"([\s\S]*)"$/);
+    if (dq) return dq[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    var sq = v.match(/^'([\s\S]*)'$/);
+    if (sq) return sq[1].replace(/''/g, "'");
+    return v;
+  }
+
   function parseFrontmatter(text) {
     var m = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
     if (!m) return { data: {}, body: text };
-    var raw = m[1];
+    var lines = m[1].split("\n");
     var body = m[2];
     var data = {};
-    var lastKey = null;
-    raw.split("\n").forEach(function (line) {
-      // continuation of a long value folded over several lines (YAML ">-", "|" or plain wrap)
-      if (lastKey && /^\s+\S/.test(line) && !/^\s*-\s/.test(line)) {
-        var cont = line.trim().replace(/^"(.*)"$/, "$1");
-        data[lastKey] = data[lastKey] ? data[lastKey] + " " + cont : cont;
-        return;
+    var i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      var km = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+      if (!km) { i++; continue; }
+      var key = km[1];
+      var val = km[2].trim();
+      i++;
+      var block = val.match(/^([|>])[-+]?$/);
+      if (block) {
+        // YAML block text (used for long texts like body_en): keep line breaks for "|", fold for ">"
+        var raw = [];
+        while (i < lines.length && (lines[i].trim() === "" || /^\s/.test(lines[i]))) { raw.push(lines[i]); i++; }
+        while (raw.length && raw[raw.length - 1].trim() === "") raw.pop();
+        var indent = Infinity;
+        raw.forEach(function (l) { if (l.trim()) indent = Math.min(indent, l.match(/^\s*/)[0].length); });
+        if (indent === Infinity) indent = 0;
+        raw = raw.map(function (l) { return l.slice(indent); });
+        if (block[1] === "|") {
+          data[key] = raw.join("\n");
+        } else {
+          data[key] = raw.join("\n").replace(/([^\n])\n(?=[^\n])/g, "$1 ");
+        }
+        continue;
       }
-      var idx = line.indexOf(":");
-      if (idx === -1) return;
-      var key = line.slice(0, idx).trim();
-      var val = line.slice(idx + 1).trim();
-      if (/^[>|][-+]?$/.test(val)) val = "";
-      val = val.replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1");
-      data[key] = val;
-      lastKey = key;
-    });
+      // plain value, possibly wrapped over several indented lines
+      while (i < lines.length && /^\s+\S/.test(lines[i]) && !/^\s*-\s/.test(lines[i])) {
+        val += " " + lines[i].trim();
+        i++;
+      }
+      data[key] = unquote(val);
+    }
     return { data: data, body: body.trim() };
+  }
+
+  // ---- Language (PT / EN) ----
+  function getLang() {
+    try { return localStorage.getItem("qltystnc-lang") === "en" ? "en" : "pt"; } catch (e) { return "pt"; }
+  }
+  // pick the English field when the reader chose EN and it exists, otherwise Portuguese
+  function pick(d, field, lang) {
+    if (lang === "en" && d[field + "_en"] && String(d[field + "_en"]).trim()) return d[field + "_en"];
+    return d[field];
   }
 
   // ---- Image optimisation (Netlify Image CDN) ----
@@ -57,7 +90,7 @@
 
   function inlineMd(s) {
     // clean up stray backslash-escapes that some editors insert
-    s = s.replace(/\\([*_~|])/g, "$1");
+    s = s.replace(/\\([*_~|\-#>.!\[\]()])/g, "$1");
     s = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     s = s.replace(/\*(.+?)\*/g, "<em>$1</em>");
@@ -66,7 +99,7 @@
 
   function markdownToHtml(md) {
     // normalize stray backslash-escapes before splitting into blocks
-    md = md.replace(/\\([*_~|])/g, "$1");
+    md = md.replace(/\\([*_~|\-#>.!\[\]()])/g, "$1");
     var blocks = md.split(/\n\s*\n/);
     var html = blocks.map(function (block) {
       block = block.trim();
@@ -181,8 +214,10 @@
     return (
       '<a href="' + href + '" class="card' + (featured ? " feature" : "") + coverClass + '"' + bgStyle + '>' +
       '<div class="tag-sm mono">' + (tagLabel || "").toUpperCase() + "</div>" +
-      "<h3>" + (d.title || "Sem título") + "</h3>" +
-      '<div class="meta">' + (metaLabel || "").toUpperCase() + "</div>" +
+      "<h3" + (d.title_en ? ' data-pt="' + esc(d.title || "") + '" data-en="' + esc(d.title_en) + '"' : "") + ">" +
+        esc(pick(d, "title", getLang()) || "Sem título") + "</h3>" +
+      '<div class="meta"' + (d.subtitulo_en && !d.localizacao ? ' data-pt="' + esc((d.subtitulo || "").toUpperCase()) + '" data-en="' + esc(d.subtitulo_en.toUpperCase()) + '"' : "") + ">" +
+        esc((d.localizacao ? metaLabel : (pick(d, "subtitulo", getLang()) || metaLabel) || "").toUpperCase()) + "</div>" +
       "</a>"
     );
   }
@@ -217,37 +252,55 @@
     });
   }
 
-  function renderPost() {
+  var _postEntry = null;
+  function postHtml(entry, lang) {
+    var d = entry.data;
+    var hasEn = !!(d.body_en && String(d.body_en).trim());
+    var useEn = lang === "en" && hasEn;
+    var title = useEn ? (d.title_en || d.title) : d.title;
+    var sub = useEn ? (d.subtitulo_en || d.subtitulo) : d.subtitulo;
+    var body = useEn ? d.body_en : entry.body;
+    var coverHtml = d.capa
+      ? '<div class="post-cover">' + imgTag(d.capa, title || "", "width:100%;display:block;", true) + "</div>"
+      : "";
+    var notice = (lang === "en" && !hasEn)
+      ? '<div class="lang-notice mono">English version coming soon — showing the original Portuguese text.</div>'
+      : "";
+    var creditsHtml = d.creditos
+      ? '<div class="post-credits mono">' + esc(d.creditos.toUpperCase()) + "</div>"
+      : "";
+    return (
+      '<div class="eyebrow mono">' + fmtDate(d.date) + (d.tipo ? " · " + esc(String(d.tipo).toUpperCase()) : "") + "</div>" +
+      '<h1 class="post-title">' + esc(title || "") + "</h1>" +
+      (sub ? '<p class="post-sub">' + esc(sub) + "</p>" : "") +
+      notice +
+      coverHtml +
+      '<div class="article-body">' + markdownToHtml(body || "") + "</div>" +
+      creditsHtml
+    );
+  }
+
+  function renderPost(lang) {
     var params = new URLSearchParams(window.location.search);
     var type = params.get("type");
     var slug = params.get("slug");
     var root = document.getElementById("post-root");
     if (!root || !type || !slug) return;
+    lang = lang || getLang();
 
+    if (_postEntry) {
+      root.innerHTML = postHtml(_postEntry, lang);
+      document.title = (pick(_postEntry.data, "title", lang) || "QLTYSTNC") + " — QLTYSTNC";
+      return;
+    }
     getCollection(type).then(function (entries) {
       var entry = entries.filter(function (e) { return e.slug === slug; })[0];
       if (!entry) {
         root.innerHTML = '<p class="mono" style="color:var(--mute)">Conteúdo não encontrado.</p>';
         return;
       }
-      var d = entry.data;
-      document.title = (d.title || "QLTYSTNC") + " — QLTYSTNC";
-      var coverHtml = d.capa
-        ? imgTag(d.capa, d.title || "", "width:100%;border:1px solid var(--line);margin-bottom:32px;", true)
-        : "";
-      var subHtml = d.subtitulo
-        ? '<p class="sub" style="color:var(--mute);font-size:16px;margin-bottom:24px;">' + d.subtitulo + "</p>"
-        : "";
-      var creditsHtml = d.creditos
-        ? '<div class="mono" style="margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;">' + d.creditos.toUpperCase() + "</div>"
-        : "";
-      root.innerHTML =
-        '<div class="eyebrow mono">' + fmtDate(d.date) + "</div>" +
-        "<h1 style=\"font-size:clamp(28px,5vw,48px);line-height:1.05;margin-bottom:16px;\">" + (d.title || "") + "</h1>" +
-        subHtml +
-        coverHtml +
-        '<div class="article-body">' + markdownToHtml(entry.body) + "</div>" +
-        creditsHtml;
+      _postEntry = entry;
+      renderPost(getLang());
     });
   }
 
@@ -456,6 +509,7 @@
     renderGrid: renderGrid,
     renderMixedGrid: renderMixedGrid,
     renderPost: renderPost,
+    getLang: getLang,
     renderCalendar: renderCalendar,
     renderStore: renderStore,
     renderMaterial: renderMaterial
