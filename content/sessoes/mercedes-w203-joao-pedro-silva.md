@@ -5,7 +5,7 @@ subtitulo: O W203 do João Pedro Silva — da praça de táxis para os palcos do
 tipo: Sessão
 date: 2018-07-26T12:00:00.000+01:00
 capa: /uploads/sessao-2018-mercedes-w203-joao-capa.jpg
-creditos: "Fotografia: QLTYSTNC · Sessão Droppt · Carro: João Pedro Silva"
+creditos: "Fotografia: QLTYSTNC · Sessão Droppt · Carro: João Pedro Silva — @jprcsilvaa"
 title_en: "Mercedes W203 — Straight from the Past"
 subtitulo_en: "João Pedro Silva's W203 — from the taxi rank to the stance stage, with over a million kilometres"
 body_en: |-
