@@ -188,14 +188,23 @@
       }
       async function buildStory() {
         var W = 1080, H = 1920, c = document.createElement("canvas");
-        c.width = W; c.height = H;
+        var SCALE = 4 / 3; // draws at 1440x2560 (Instagram-recommended max) for a sharper story
+        c.width = W * SCALE; c.height = H * SCALE;
         var ctx = c.getContext("2d");
+        ctx.scale(SCALE, SCALE);
+        ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
         try { await document.fonts.load("700 80px 'Chakra Petch'"); await document.fonts.load("500 30px 'Space Grotesk'"); } catch (e) {}
         ctx.fillStyle = "#0a0a0a"; ctx.fillRect(0, 0, W, H);
         var coverEl = root.querySelector(".post-cover img");
         if (coverEl) {
           try {
-            var img = await loadImg(coverEl.currentSrc || coverEl.src);
+            // ask for a big version of the cover (the page only loads one sized for the screen)
+            var big = coverEl.currentSrc || coverEl.src;
+            if (big.indexOf("/.netlify/images") !== -1) {
+              var u = new URL(big, location.href); u.searchParams.set("w", "2560"); u.searchParams.set("q", "92"); big = u.toString();
+            }
+            var img;
+            try { img = await loadImg(big); } catch (e) { img = await loadImg(coverEl.currentSrc || coverEl.src); }
             var areaH = 1500, s = Math.max(W / img.width, areaH / img.height);
             var dw = img.width * s, dh = img.height * s;
             ctx.drawImage(img, (W - dw) / 2, (areaH - dh) / 2, dw, dh);
@@ -238,7 +247,7 @@
         ctx.fillStyle = "#0a0a0a"; ctx.font = "700 40px 'Chakra Petch', sans-serif";
         var cta = isEn() ? "FULL STORY → QLTYSTNC.COM" : "HISTÓRIA COMPLETA → QLTYSTNC.COM";
         ctx.fillText(cta, (W - ctx.measureText(cta).width) / 2, 1790);
-        return new Promise(function (res) { c.toBlob(res, "image/jpeg", 0.92); });
+        return new Promise(function (res) { c.toBlob(res, "image/jpeg", 0.95); });
       }
       ig.addEventListener("click", async function () {
         ig.disabled = true;
