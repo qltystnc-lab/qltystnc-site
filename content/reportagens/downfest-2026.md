@@ -41,7 +41,6 @@ body_en: |-
   The Golf IV is one of those cars everyone has owned or wanted to. This one, on OZ wheels with fitment spot on, is a reminder of why the fourth generation is still a go-to base.
 
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
-
   ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
   **VW Golf Mk2 — @tiagosilva_mk2bagged**
@@ -102,7 +101,6 @@ Uma carrinha familiar que de familiar já tem pouco. Amarelo impossível de igno
 O Golf IV é daqueles carros que toda a gente já teve ou quis ter. Este, com jantes OZ e um fitment no sítio, lembra porque é que a quarta geração continua a ser uma base de eleição.
 
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky.jpg)
-
 ![VW Golf IV — @originalgolfiv_ricky](/uploads/downfest-2026-golf-mk4-ricky-detalhe.jpg)
 
 **VW Golf Mk2 — @tiagosilva_mk2bagged**
