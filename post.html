@@ -76,6 +76,18 @@
     .article-body .img-row img{flex:none !important;width:100% !important;}
     .article-body .img-row img.portrait{width:auto !important;max-width:100%;max-height:80vh;margin:0 auto !important;}
   }
+  .share{max-width:820px;margin:0 auto;padding:0 var(--gutter) clamp(56px,8vw,96px);display:none;}
+  .share.on{display:block;}
+  .share .lbl{font-size:11px;color:var(--signal);letter-spacing:.14em;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .share .lbl::before{content:'';width:28px;height:1px;background:var(--signal);}
+  .share .row{display:flex;flex-wrap:wrap;gap:10px;}
+  .share a,.share button{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;font:inherit;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);background:transparent;color:var(--off);cursor:pointer;transition:all .25s;}
+  .share svg{width:18px;height:18px;fill:currentColor;flex:none;}
+  .share .fb{background:#1877f2;border-color:#1877f2;color:#fff;}
+  .share .fb:hover{background:#fff;border-color:#fff;color:#1877f2;}
+  .share .wa:hover{border-color:#25d366;color:#25d366;}
+  .share .cp:hover{border-color:var(--signal);color:var(--signal);}
+  @media(max-width:480px){.share .row{flex-direction:column;}.share a,.share button{justify-content:center;}}
   .post-credits{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;line-height:1.6;}
 
   footer{padding:28px var(--gutter);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--mute);letter-spacing:.06em;}
@@ -104,6 +116,15 @@
   <p class="mono" style="color:var(--mute);font-size:12px;">A carregar…</p>
 </main>
 
+<section class="share mono" id="share">
+  <div class="lbl" data-pt="PARTILHA ESTE ARTIGO" data-en="SHARE THIS STORY">PARTILHA ESTE ARTIGO</div>
+  <div class="row">
+    <a class="fb" id="share-fb" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg><span data-pt="Partilhar no Facebook" data-en="Share on Facebook">Partilhar no Facebook</span></a>
+    <a class="wa" id="share-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.79h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.98.99-3.63-.23-.37a9.8 9.8 0 0 1-1.5-5.21c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.03 6.96 2.89a9.77 9.77 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.85 9.83zM20.4 3.6A11.75 11.75 0 0 0 12.04.12C5.5.12.17 5.44.17 11.98c0 2.09.55 4.13 1.59 5.93L.07 24l6.25-1.64a11.84 11.84 0 0 0 5.71 1.46h.01c6.54 0 11.87-5.32 11.87-11.86 0-3.17-1.23-6.15-3.5-8.39z"/></svg>WhatsApp</a>
+    <button class="cp" id="share-cp" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7A3.1 3.1 0 0 1 3.9 12zM8 13h8v-2H8v2zm9-6h-4v1.9h4a3.1 3.1 0 0 1 0 6.2h-4V17h4a5 5 0 0 0 0-10z"/></svg><span data-pt="Copiar link" data-en="Copy link">Copiar link</span></button>
+  </div>
+</section>
+
 <footer>
   <span>© 2026 QLTYSTNC® — RICARDO ROCHA | SAUL SALGADO</span>
   <span>PORTO · PORTUGAL</span>
@@ -113,6 +134,41 @@
 <script>
   (function () {
     var root = document.getElementById("post-root");
+
+    // share buttons (Facebook / WhatsApp / copy) — shared link is the clean article URL, without ?preview
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var type = params.get("type"), slug = params.get("slug");
+      if (!type || !slug) return;
+      var url = location.origin + "/post?type=" + encodeURIComponent(type) + "&slug=" + encodeURIComponent(slug);
+      document.getElementById("share-fb").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+      document.getElementById("share-fb").addEventListener("click", function (e) {
+        if (window.innerWidth < 760) return; // on phones open normally (app / new tab)
+        e.preventDefault();
+        window.open(this.href, "fbshare", "width=640,height=560,noopener");
+      });
+      var wa = document.getElementById("share-wa");
+      var setWa = function () { wa.href = "https://wa.me/?text=" + encodeURIComponent(document.title.replace(/ — QLTYSTNC$/, "") + " — " + url); };
+      setWa();
+      wa.addEventListener("mousedown", setWa);
+      wa.addEventListener("touchstart", setWa, { passive: true });
+      var cp = document.getElementById("share-cp");
+      cp.addEventListener("click", function () {
+        var label = cp.querySelector("span");
+        var done = function () {
+          var old = label.textContent;
+          label.textContent = document.documentElement.lang === "en" ? "Link copied ✓" : "Link copiado ✓";
+          setTimeout(function () { label.textContent = old; }, 2000);
+        };
+        if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () { prompt("", url); }); }
+        else { prompt("", url); }
+      });
+      // show once the article has loaded
+      var root = document.getElementById("post-root");
+      new MutationObserver(function () {
+        if (root.querySelector(".article-body")) { document.getElementById("share").classList.add("on"); setWa(); }
+      }).observe(root, { childList: true });
+    })();
     function setUi(lang) {
       document.documentElement.setAttribute("lang", lang);
       document.getElementById("btn-pt").classList.toggle("active", lang === "pt");
