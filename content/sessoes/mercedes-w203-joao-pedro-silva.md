@@ -1,5 +1,5 @@
 ---
-rascunho: true
+rascunho: false
 title: Mercedes W203 — Diretamente do Passado
 subtitulo: O W203 do João Pedro Silva — da praça de táxis para os palcos do stance, com mais de um milhão de quilómetros
 tipo: Sessão
