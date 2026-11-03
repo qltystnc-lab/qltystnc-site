@@ -49,9 +49,6 @@ body_en: |-
   **VW Beetle — @chowa_vw**
   Carocha or Fusca, depending on which side of the Atlantic you're on. Living proof that stance has no age.
 
-  **Audi A3 — built by Eurocar Detail**
-  The Barcelos crew prepared it especially for the event: a well-thought-out spec, carefully chosen wheels and that final shine only proper detailing can give.
-
   And many more: @the.bluish's Mégane IV, @low_rocco_mk3's Golf Mk3 and dozens of other builds you'll find in the gallery.
 
   ## What people said
@@ -108,9 +105,6 @@ Suspensão a ar, linhas quadradas e aquele charme dos anos 80 que não envelhece
 
 **VW Carocha — @chowa_vw**
 Carocha ou Fusca, conforme o lado do Atlântico. Prova viva de que o stance não tem idade.
-
-**Audi A3 — preparado pela Eurocar Detail**
-A equipa de Barcelos preparou-o especialmente para o evento: spec cuidada, jantes bem escolhidas e aquele brilho final que só um detalhe a sério dá.
 
 E muitos mais: o Mégane IV de @the.bluish, o Golf Mk3 de @low_rocco_mk3 e dezenas de outros projetos que vais encontrar na galeria.
 
