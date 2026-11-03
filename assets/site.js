@@ -265,8 +265,9 @@
     if (isNaN(dt.getTime())) return null;
     var now = new Date();
     var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    var diff = Math.ceil((dt - startOfToday) / (1000 * 60 * 60 * 24));
-    return diff;
+    var startOfEventDay = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+    // compare calendar days only (event time of day no longer adds an extra day)
+    return Math.round((startOfEventDay - startOfToday) / (1000 * 60 * 60 * 24));
   }
 
   function eventRowHtml(entry, isNext, isPast) {
@@ -424,7 +425,34 @@
     });
   }
 
+  // ---------- Arquivo (todas as reportagens + sessões) ----------
+  var _archivePromise = null;
+  function renderArchive(containerId, filter, countId) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    if (!_archivePromise) {
+      _archivePromise = Promise.all(["reportagens", "sessoes"].map(getCollection)).then(function (r) {
+        var all = [].concat.apply([], r);
+        all.sort(function (a, b) {
+          return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime();
+        });
+        return all;
+      });
+    }
+    _archivePromise.then(function (entries) {
+      if (filter && filter !== "todos") {
+        entries = entries.filter(function (e) { return e.type === filter; });
+      }
+      var countEl = countId && document.getElementById(countId);
+      if (countEl) countEl.textContent = String(entries.length).padStart(2, "0");
+      el.innerHTML = entries.length
+        ? entries.map(function (e) { return cardHtml(e, false); }).join("")
+        : '<p class="mono" style="color:var(--mute);font-size:13px;">Ainda não há nada publicado aqui.</p>';
+    });
+  }
+
   window.QLTYSTNC = {
+    renderArchive: renderArchive,
     renderGrid: renderGrid,
     renderMixedGrid: renderMixedGrid,
     renderPost: renderPost,
