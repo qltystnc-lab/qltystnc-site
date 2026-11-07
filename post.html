@@ -52,6 +52,10 @@
   .lang-notice{font-size:11px;color:var(--mute);border:1px dashed var(--line);padding:10px 14px;margin-bottom:24px;}
   .post-cover{margin:0 calc(var(--gutter) * -1) 40px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   @media(min-width:900px){.post-cover{margin:0 -60px 48px;border:1px solid var(--line);}}
+  /* reserve the cover's space before it loads (real ratio comes from the edge function; 16:9 fallback) so the text doesn't jump */
+  .post-cover img{width:100%;height:auto;aspect-ratio:var(--cover-ar,16/9);object-fit:cover;background:var(--panel);}
+  /* while the article loads, keep the footer below the fold instead of jumping */
+  main:has(> .loading){min-height:100vh;}
 
   .article-body p{margin-bottom:20px;line-height:1.75;font-size:clamp(16px,1.25vw,17.5px);color:#d8d6d0;}
   .article-body p strong{color:var(--off);}
@@ -117,7 +121,7 @@
 </nav>
 
 <main id="post-root">
-  <p class="mono" style="color:var(--mute);font-size:12px;">A carregar…</p>
+  <p class="mono loading" style="color:var(--mute);font-size:12px;">A carregar…</p>
 </main>
 
 <section class="share mono" id="share">
