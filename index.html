@@ -22,7 +22,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/.netlify/images?url=%2Fuploads%2Fdsc07367.jpg&w=2000&q=80">
+<!-- hero photo preloaded at the same size the slideshow asks for (phone / laptop / big screen), so it is never downloaded twice -->
+<link rel="preload" as="image" fetchpriority="high" href="/.netlify/images?url=%2Fuploads%2Fdsc07367.jpg&w=1100&q=80" media="(max-width: 800px)">
+<link rel="preload" as="image" fetchpriority="high" href="/.netlify/images?url=%2Fuploads%2Fdsc07367.jpg&w=2000&q=80" media="(min-width: 800.1px) and (max-width: 1400px)">
+<link rel="preload" as="image" fetchpriority="high" href="/.netlify/images?url=%2Fuploads%2Fdsc07367.jpg&w=2400&q=80" media="(min-width: 1400.1px)">
 <style>
   :root{
     --black:#0a0a0a;
@@ -682,16 +685,20 @@
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ac0a0c24f854fad9469a2c1b568dea5"}'></script>
 
 <!-- PAINEL DE ARTIGOS / SESSOES (Decap CMS) -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!-- The login widget is only needed when opening an invite / password-reset link,
+     so normal visitors don't download it (the /admin/ panel has its own login). -->
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+  if (/(invite_token|recovery_token|confirmation_token|email_change_token|access_token)=/.test(location.hash)) {
+    var nis = document.createElement("script");
+    nis.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+    nis.onload = function () {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
+        }
+      });
+    };
+    document.body.appendChild(nis);
   }
 </script>
 
