@@ -81,9 +81,11 @@
   }
   function imgTag(src, alt, style, eager) {
     var opt = optUrl(src, 1600);
-    var attrs = ' alt="' + (alt || "") + '" style="' + style + '"' +
-      (eager ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async"' +
-      ' onload="if(this.naturalHeight>this.naturalWidth)this.classList.add(\'portrait\')"';
+    // lazy photos reserve a 3:2 box (most photos are 3:2) and switch to their real
+    // shape once loaded, so the text below doesn't jump while they load
+    var attrs = ' alt="' + (alt || "") + '" style="' + (eager ? "" : "aspect-ratio:3/2;") + style + '"' +
+      (eager ? ' fetchpriority="high" decoding="sync"' : ' loading="lazy" decoding="async"') +
+      ' onload="if(this.naturalWidth){this.style.aspectRatio=this.naturalWidth+\'/\'+this.naturalHeight;}if(this.naturalHeight>this.naturalWidth)this.classList.add(\'portrait\')"';
     if (opt === src) return '<img src="' + src + '"' + attrs + '>';
     var srcset = [800, 1200, 1600, 2400].map(function (w) { return optUrl(src, w) + " " + w + "w"; }).join(", ");
     return '<img src="' + opt + '" srcset="' + srcset + '" sizes="(max-width: 760px) 100vw, 760px"' + attrs +
@@ -264,6 +266,34 @@
   }
 
   var _postEntry = null;
+
+  // Loads ONE article. Fastest path: the text already embedded in the page by the
+  // Netlify edge function (post-og.js). Otherwise fetch only that .md file, and as a
+  // last resort the whole collection (old behaviour).
+  function getPostEntry(type, slug) {
+    var showDrafts = /[?&]preview=1(&|$)/.test(location.search);
+    function toEntry(text) {
+      var parsed = parseFrontmatter(text);
+      if (!showDrafts && String(parsed.data.rascunho) === "true") return null;
+      return { slug: slug, type: type, data: parsed.data, body: parsed.body };
+    }
+    try {
+      var el = document.getElementById("post-md");
+      if (el) {
+        var emb = JSON.parse(el.textContent);
+        if (emb && emb.type === type && emb.slug === slug && emb.text) return Promise.resolve(toEntry(emb.text));
+      }
+    } catch (e) {}
+    return fetch(RAW_BASE + "content/" + type + "/" + encodeURIComponent(slug) + ".md")
+      .then(function (r) { if (!r.ok) throw new Error("md " + r.status); return r.text(); })
+      .then(toEntry)
+      .catch(function () {
+        return getCollection(type).then(function (entries) {
+          return entries.filter(function (e) { return e.slug === slug; })[0] || null;
+        });
+      });
+  }
+
   function postHtml(entry, lang) {
     var d = entry.data;
     var hasEn = !!(d.body_en && String(d.body_en).trim());
@@ -304,8 +334,7 @@
       document.title = (pick(_postEntry.data, "title", lang) || "QLTYSTNC") + " — QLTYSTNC";
       return;
     }
-    getCollection(type).then(function (entries) {
-      var entry = entries.filter(function (e) { return e.slug === slug; })[0];
+    getPostEntry(type, slug).then(function (entry) {
       if (!entry) {
         root.innerHTML = '<p class="mono" style="color:var(--mute)">Conteúdo não encontrado.</p>';
         return;
