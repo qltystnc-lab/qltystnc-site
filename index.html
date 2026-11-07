@@ -546,8 +546,8 @@
 
 <div class="stats" id="stats">
   <div class="stat"><b><span data-count="2015" data-years>0</span></b><span data-pt="Anos na cena" data-en="Years in the scene">Anos na cena</span></div>
-  <div class="stat"><b><span data-count="300">0</span><em>K</em></b><span data-pt="Seguidores no Facebook" data-en="Facebook followers">Seguidores no Facebook</span></div>
-  <div class="stat"><b><span data-count="30">0</span><em>K</em></b><span data-pt="Seguidores no Instagram" data-en="Instagram followers">Seguidores no Instagram</span></div>
+  <div class="stat"><b><span data-count="354">0</span><em>K</em></b><span data-pt="Seguidores no Facebook" data-en="Facebook followers">Seguidores no Facebook</span></div>
+  <div class="stat"><b><span data-count="31.4" data-decimals="1">0</span><em>K</em></b><span data-pt="Seguidores no Instagram" data-en="Instagram followers">Seguidores no Instagram</span></div>
   <div class="stat"><b>PT<em>/</em>EU</b><span data-pt="Eventos cá e lá fora" data-en="Events home &amp; abroad">Eventos cá e lá fora</span></div>
 </div>
 
@@ -840,15 +840,18 @@
 
   // --- reveals + counters ---
   function countUp(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10);
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    // 31.4 -> "31,4" in Portuguese, "31.4" in English
+    function fmt(v) { var s = v.toFixed(dec); return document.documentElement.lang === 'en' ? s : s.replace('.', ','); }
     if (el.hasAttribute('data-years')) target = new Date().getFullYear() - target;
-    if (reduce) { el.textContent = target; return; }
+    if (reduce) { el.textContent = fmt(target); return; }
     var t0 = null, d = 1600;
     function step(t) {
       if (!t0) t0 = t;
       var p = Math.min(1, (t - t0) / d);
       var e = 1 - Math.pow(1 - p, 4);
-      el.textContent = Math.round(target * e);
+      el.textContent = fmt(target * e);
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
